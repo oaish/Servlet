@@ -1,0 +1,324 @@
+GET http://localhost:8080/TalkWave_war_exploded/jsp
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T154835.200.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T005856.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T005736.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T005237.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T005148.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T005139.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T004503.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T004245.500.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T003241.500.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-03T003226.404.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 97
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "senderID": "oaish",
+  "receiverID": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T235556.500.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T235523.500.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "abcd",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T235352.500.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "ASDF",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T235141.500.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "ASDF",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T234810.500.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "ASDF",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T234736.405.html
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "ASDF",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T234717.405.html
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-02T234604.200.json
+
+###
+
+POST http://localhost:8080/TalkWave_war_exploded/api-post
+Content-Type: application/json
+Content-Length: 93
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "sender": "oaish",
+  "receiver": "dawg",
+  "message": "ASDF",
+  "timestamp": "12:19 AM"
+}
+
+<> 2023-10-02T234455.405.html
+
+###
+
