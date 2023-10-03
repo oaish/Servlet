@@ -9,22 +9,21 @@ async function sendMsg() {
     putSenderMsg(value, time)
 
     const msgData = {
-        senderID: username,
-        receiverID: receiver,
+        senderID: sessionUser.id,
+        receiverID: receiver.id,
         message: value,
         timestamp: time
     }
-
-    const res = await fetch(apiPostTempURL, {
-        method: 'POST',
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(msgData)
-    })
-    const data = await res.json()
-    console.log(data)
-
+    //
+    // await fetch(apiPostMsgTempURL, {
+    //     method: 'POST',
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify(msgData)
+    // })
+    websocket && websocket.send(JSON.stringify(msgData));
+    console.log(JSON.stringify(msgData))
 }
 
 function getCurrentTime() {
@@ -74,37 +73,78 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 async function getChatHistory() {
+    const url = apiGetChatMsgTempURL+ "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
+    const res = await fetch(url, {method: 'GET'})
+    const arr = await res.json()
+
     const parsedArray = await Promise.all(arr.map(async (jsonString) => {
         const msg = JSON.parse(jsonString);
-        if (msg.senderId.toString() === user.id) {
-            console.log(msg.senderId, "yeah same");
+        if (msg.senderId.toString() === sessionUser.id) {
             putSenderMsg(msg.content, msg.timestamp);
         } else {
-            console.log(msg.senderId);
             putReceiverMsg(msg.content, msg.timestamp);
         }
         return msg;
     }));
-
-    console.log(parsedArray);
 }
 
-function fetchFriends() {
-    
+async function fetchFriends() {
+    const res = await fetch(apiGetFriendsTempURL + "?senderID="+sessionUser.id, {method: "GET"})
+    friends = await res.json()
+
+    friends.forEach((friend) => {
+        friend.ref = generateUserCard(friend);
+    });
 }
 
+fetchFriends().then(r => console.log(friends))
 
-function startChat(userID) {
-    
+function startChat(user) {
+    const chat_name = document.querySelector(".chat-name")
+    chat_name.textContent = user.profileName;
+    websocket =new WebSocket("ws://localhost:8080/TalkWave_war_exploded/websocket")
+    receiver = user
+
+    websocket.onopen = function(event) {
+        console.log('WebSocket connection established')
+        websocket.send(`$id:${sessionUser.id}`)
+    };
+
+    websocket.onmessage = function(event) {
+        if (event.data.includes("\"sessionId\"")) {
+            const obj = JSON.parse(event.data)
+            sessionUser.sessionId = obj.sessionId;
+            return;
+        }
+
+        console.log('Server says: ' + event.data.toString())
+        try {
+            const msg = JSON.parse(event.data.toString())
+            console.log(msg)
+            putReceiverMsg(msg.message, msg.timestamp)
+        } catch (e) {
+            console.log(e)
+        }
+    };
+
+    websocket.onclose = function(event) {
+        if (event.wasClean) {
+            console.log('WebSocket connection closed cleanly, code=' + event.code)
+        } else {
+            console.log('WebSocket connection abruptly closed')
+        }
+    };
+
+    getChatHistory()
 }
 
 function generateUserCard(userData) {
     const userCard = document.createElement("div");
     userCard.className = "user-card";
     userCard.onclick = () => {
-        if (!this.className.includes("user-card-active")) {
-            this.className += " user-card-active"
-            startChat(userData.id);
+        if (!userCard.className.includes("user-card-active")) {
+            userCard.className += " user-card-active"
+            startChat(userData);
         }
     };
 
@@ -121,4 +161,14 @@ function generateUserCard(userData) {
 
     const usersContainer = document.querySelector(".users");
     usersContainer.appendChild(userCard);
+
+    return {
+        userCard,
+        userStatus
+    }
 }
+
+// let interval = setInterval(() => {
+//     chatBody.innerHTML = ""
+//     getChatHistory(receiver).then(res => console.log("chat restored"));
+// }, 500)

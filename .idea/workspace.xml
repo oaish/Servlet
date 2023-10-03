@@ -9,7 +9,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="" />
+    <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/GetChatMsgServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/GetServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/GetFriendsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/PostServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/PostMsgServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/API.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/commit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,30 +67,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "oaish",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;oaish&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.talkwave" />
@@ -200,7 +217,8 @@
       <updated>1696265273695</updated>
       <workItem from="1696265276151" duration="9515000" />
       <workItem from="1696320382568" duration="14674000" />
-      <workItem from="1696344511642" duration="2033000" />
+      <workItem from="1696344511642" duration="11001000" />
+      <workItem from="1696357656487" duration="7817000" />
     </task>
     <servers />
   </component>

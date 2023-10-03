@@ -1,12 +1,16 @@
-const apiGetURL = 'http://localhost:8080/TalkWave/api-get'
-const apiGetTempURL = 'http://localhost:8080/TalkWave_war_exploded/api-get'
-const apiPostURL = 'http://localhost:8080/TalkWave/api-post'
-const apiPostTempURL = 'http://localhost:8080/TalkWave_war_exploded/api-post'
+const apiGetFriendsURL = 'http://localhost:8080/TalkWave/api-get-friends'
+const apiGetFriendsTempURL = 'http://localhost:8080/TalkWave_war_exploded/api-get-friends'
+const apiGetChatMsgURL = 'http://localhost:8080/TalkWave/api-get-chat-msg'
+const apiGetChatMsgTempURL = 'http://localhost:8080/TalkWave_war_exploded/api-get-chat-msg'
+const apiPostMsgURL = 'http://localhost:8080/TalkWave/api-post-msg'
+const apiPostMsgTempURL = 'http://localhost:8080/TalkWave_war_exploded/api-post-msg'
 
-let user = {
-    id: "2",
-    name: "dawg",
-    profileName: "Abdurrahman Qureshi"
+let websocket = null;
+
+let sessionUser = {
+    id: prompt("Enter userID"),
+    name: "oaish",
+    profileName: "Oaish Qazi"
 }
 
 let receiver = {
@@ -16,13 +20,4 @@ let receiver = {
     status: "offline"
 }
 
-let friends = [
-    {
-        id: "1",
-        ref: "",
-        name: "oaish",
-        profileName: "Oaish Qazi",
-        lastMsg: "sup bro",
-        status: "offline"
-    }
-]
+let friends = {}

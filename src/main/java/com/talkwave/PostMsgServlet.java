@@ -13,9 +13,9 @@ import java.sql.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
-@WebServlet(name = "postServlet", value = "/api-post")
-public class PostServlet extends HttpServlet {
-    private static final Logger logger = Logger.getLogger(PostServlet.class.getName());
+@WebServlet(name = "postServlet", value = "/api-post-msg")
+public class PostMsgServlet extends HttpServlet {
+    private static final Logger logger = Logger.getLogger(PostMsgServlet.class.getName());
 
     public void init() {
     }
