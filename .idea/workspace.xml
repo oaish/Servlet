@@ -10,47 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/GetServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/PostServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/API.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/DDLQuery.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/sidebar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/LI.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/PC.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/dawg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/doodle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/attach.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/chat_room.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/communication.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/cv.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/double_tick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/double_tick2.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/emoji.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/search.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/sent.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/settings.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/user.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/DDLQuery.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,30 +61,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
-      "MySQL"
+    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
+      &quot;MySQL&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.talkwave" />
@@ -241,7 +210,8 @@
       <option name="presentableId" value="Default" />
       <updated>1696265273695</updated>
       <workItem from="1696265276151" duration="9515000" />
-      <workItem from="1696320382568" duration="10608000" />
+      <workItem from="1696320382568" duration="14674000" />
+      <workItem from="1696344511642" duration="1450000" />
     </task>
     <servers />
   </component>

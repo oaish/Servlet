@@ -69,14 +69,14 @@ function putReceiverMsg(msg, time) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    if (arr !== null)
-        getChatHistory();
+    // if (arr !== null)
+        // getChatHistory();
 });
 
 async function getChatHistory() {
     const parsedArray = await Promise.all(arr.map(async (jsonString) => {
         const msg = JSON.parse(jsonString);
-        if (msg.senderId.toString() === username) {
+        if (msg.senderId.toString() === user.id) {
             console.log(msg.senderId, "yeah same");
             putSenderMsg(msg.content, msg.timestamp);
         } else {
@@ -87,4 +87,38 @@ async function getChatHistory() {
     }));
 
     console.log(parsedArray);
+}
+
+function fetchFriends() {
+    
+}
+
+
+function startChat(userID) {
+    
+}
+
+function generateUserCard(userData) {
+    const userCard = document.createElement("div");
+    userCard.className = "user-card";
+    userCard.onclick = () => {
+        if (!this.className.includes("user-card-active")) {
+            this.className += " user-card-active"
+            startChat(userData.id);
+        }
+    };
+
+    userCard.innerHTML =
+            `<div class="user-profile">
+                <img src="pages/img/AK.png" alt="">
+                <div class="status ${userData.status}"></div>
+            </div>
+            <div class="user-name">${userData.profileName}</div>
+            <div class="user-msg">${userData.lastMsg}</div>
+            <div class="user-config"></div>`;
+
+    const userStatus = userCard.querySelector(".status")
+
+    const usersContainer = document.querySelector(".users");
+    usersContainer.appendChild(userCard);
 }

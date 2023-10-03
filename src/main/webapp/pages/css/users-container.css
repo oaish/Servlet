@@ -1,6 +1,5 @@
 .users-container {
     border-radius: 10px 0 0 0;
-    /*padding: 15px 30px 0 30px;*/
     padding-top: 15px;
     overflow-y: hidden;
 }
@@ -51,6 +50,7 @@
 }
 
 .users {
+    padding: 0 30px;
     margin-top: 22px;
     display: flex;
     flex-direction: column;
@@ -59,8 +59,8 @@
 }
 
 .user-card {
-    width: calc(100% - 30px);
-    margin-inline: auto;
+    width: 100%;
+    /*margin-inline: auto;*/
     height: 70px;
     display: grid;
     padding: 10px;
@@ -68,7 +68,7 @@
     border-radius: 8px;
     margin-bottom: 5px;
     grid-template-rows: 25px 25px;
-    grid-template-columns: 50px 1fr 50px;
+    grid-template-columns: 50px 1fr;
 }
 
 .user-card:hover {
@@ -84,6 +84,7 @@
 }
 
 .user-profile {
+    position: relative;
     grid-row: span 2;
 }
 
@@ -92,6 +93,23 @@
     height: 100%;
     object-fit: cover;
     border-radius: 50%;
+}
+
+.user-profile .status {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    translate: 10% -10%;
+    border: 4px solid #222;
+    background-color: var(--primary-color);
+}
+
+.status.online {
+    display: block;
 }
 
 .user-name {

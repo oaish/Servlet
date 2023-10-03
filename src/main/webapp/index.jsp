@@ -13,11 +13,13 @@
     <link rel="stylesheet" href="pages/css/chat-container.css">
     <script src="pages/js/config.js"></script>
     <script defer>
+        let friends = <%= request.getAttribute("friends") %>;
         let arr = <%= request.getAttribute("messages") %>;
         let user = <%= request.getAttribute("user") %>;
     </script>
     <script src="pages/js/script.js" defer></script>
 </head>
+
 <body>
 <main>
     <div class="sidebar">
@@ -50,28 +52,10 @@
             <div class="user-card user-card-active" onclick="getChatHistory()">
                 <div class="user-profile">
                     <img src="pages/img/AK.png" alt="">
+                    <div class="status online"></div>
                 </div>
                 <div class="user-name">Oaish Qazi</div>
-                <div class="user-last-seen">Yesterday</div>
                 <div class="user-msg">What r u doing</div>
-                <div class="user-config"></div>
-            </div>
-            <div class="user-card">
-                <div class="user-profile">
-                    <img src="pages/img/PC.jpg" alt="">
-                </div>
-                <div class="user-name">Niggalators</div>
-                <div class="user-last-seen">12:19 AM</div>
-                <div class="user-msg">Yeah</div>
-                <div class="user-config"></div>
-            </div>
-            <div class="user-card">
-                <div class="user-profile">
-                    <img src="pages/img/dawg.png" alt="">
-                </div>
-                <div class="user-name">Dawg</div>
-                <div class="user-last-seen">30/09/23</div>
-                <div class="user-msg">Image</div>
                 <div class="user-config"></div>
             </div>
         </div>

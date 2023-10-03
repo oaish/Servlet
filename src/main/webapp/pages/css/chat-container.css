@@ -101,7 +101,7 @@
 
 .right-msg {
     right: 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-chat-color);
 }
 
 .left-msg {
