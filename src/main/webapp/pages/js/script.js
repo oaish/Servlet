@@ -1,11 +1,12 @@
 const textBox = document.querySelector("#text-box")
 const chatBody = document.querySelector(".chat-body")
+const chatMask = document.querySelector(".chat-mask")
 
-async function sendMsg() {
+function sendMsg() {
     const value = textBox.value
     const time = getCurrentTime()
     textBox.value = ""
-    if (value === "") return
+    if (value === "" || !isChatActive) return
     putSenderMsg(value, time)
 
     const msgData = {
@@ -14,16 +15,10 @@ async function sendMsg() {
         message: value,
         timestamp: time
     }
-    //
-    // await fetch(apiPostMsgTempURL, {
-    //     method: 'POST',
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     },
-    //     body: JSON.stringify(msgData)
-    // })
+    receiver.ref.userLastMsg.title = value
+    receiver.ref.userLastMsg.textContent = "You: " + value
+
     websocket && websocket.send(JSON.stringify(msgData));
-    console.log(JSON.stringify(msgData))
 }
 
 function getCurrentTime() {
@@ -32,11 +27,7 @@ function getCurrentTime() {
     return now.toLocaleTimeString('en-US', options);
 }
 
-textBox.onkeyup = e => {
-    if (e.keyCode === 13) {
-        sendMsg()
-    }
-}
+textBox.onkeyup = e => { if (e.keyCode === 13) sendMsg() }
 
 function putSenderMsg(msg, time) {
     chatBody.innerHTML +=
@@ -67,13 +58,8 @@ function putReceiverMsg(msg, time) {
     chatBody.scrollTop = chatBody.scrollHeight
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    // if (arr !== null)
-        // getChatHistory();
-});
-
 async function getChatHistory() {
-    const url = apiGetChatMsgTempURL+ "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
+    const url = apiGetChatMsgTempURL + "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
     const res = await fetch(url, {method: 'GET'})
     const arr = await res.json()
 
@@ -88,8 +74,50 @@ async function getChatHistory() {
     }));
 }
 
+function startChat(user) {
+    const chat_name = document.querySelector(".chat-name")
+    chat_name.textContent = user.profileName;
+    chatBody.innerHTML = ""
+    receiver = user
+    if (!isChatActive)
+        chatMask.style.display = "none";
+    getChatHistory().then()
+}
+
+function generateUserCard(userData) {
+    const userCard = document.createElement("div");
+    userCard.className = "user-card";
+    userCard.onclick = () => {
+        friends.forEach(friend => friend.ref.userCard.className = "user-card")
+        userCard.className += " user-card-active"
+        console.log("USER DATA",userData)
+        startChat(userData);
+    };
+
+    userCard.innerHTML =
+        `<div class="user-profile">
+                <img src="pages/img/AK.png" alt="">
+                <div class="status ${userData.status}"></div>
+            </div>
+            <div class="user-name">${userData.profileName}</div>
+            <div class="user-last-msg" title="${userData.lastMsg}">${userData.lastMsg}</div>
+            <div class="user-config"></div>`;
+
+    const userStatus = userCard.querySelector(".status")
+    const userLastMsg = userCard.querySelector(".user-last-msg")
+
+    const usersContainer = document.querySelector(".users");
+    usersContainer.appendChild(userCard);
+
+    return {
+        userCard,
+        userLastMsg,
+        userStatus
+    }
+}
+
 async function fetchFriends() {
-    const res = await fetch(apiGetFriendsTempURL + "?senderID="+sessionUser.id, {method: "GET"})
+    const res = await fetch(apiGetFriendsTempURL + "?senderID=" + sessionUser.id, {method: "GET"})
     friends = await res.json()
 
     friends.forEach((friend) => {
@@ -97,78 +125,4 @@ async function fetchFriends() {
     });
 }
 
-fetchFriends().then(r => console.log(friends))
-
-function startChat(user) {
-    const chat_name = document.querySelector(".chat-name")
-    chat_name.textContent = user.profileName;
-    websocket =new WebSocket("ws://localhost:8080/TalkWave_war_exploded/websocket")
-    receiver = user
-
-    websocket.onopen = function(event) {
-        console.log('WebSocket connection established')
-        websocket.send(`$id:${sessionUser.id}`)
-    };
-
-    websocket.onmessage = function(event) {
-        if (event.data.includes("\"sessionId\"")) {
-            const obj = JSON.parse(event.data)
-            sessionUser.sessionId = obj.sessionId;
-            return;
-        }
-
-        console.log('Server says: ' + event.data.toString())
-        try {
-            const msg = JSON.parse(event.data.toString())
-            console.log(msg)
-            putReceiverMsg(msg.message, msg.timestamp)
-        } catch (e) {
-            console.log(e)
-        }
-    };
-
-    websocket.onclose = function(event) {
-        if (event.wasClean) {
-            console.log('WebSocket connection closed cleanly, code=' + event.code)
-        } else {
-            console.log('WebSocket connection abruptly closed')
-        }
-    };
-
-    getChatHistory()
-}
-
-function generateUserCard(userData) {
-    const userCard = document.createElement("div");
-    userCard.className = "user-card";
-    userCard.onclick = () => {
-        if (!userCard.className.includes("user-card-active")) {
-            userCard.className += " user-card-active"
-            startChat(userData);
-        }
-    };
-
-    userCard.innerHTML =
-            `<div class="user-profile">
-                <img src="pages/img/AK.png" alt="">
-                <div class="status ${userData.status}"></div>
-            </div>
-            <div class="user-name">${userData.profileName}</div>
-            <div class="user-msg">${userData.lastMsg}</div>
-            <div class="user-config"></div>`;
-
-    const userStatus = userCard.querySelector(".status")
-
-    const usersContainer = document.querySelector(".users");
-    usersContainer.appendChild(userCard);
-
-    return {
-        userCard,
-        userStatus
-    }
-}
-
-// let interval = setInterval(() => {
-//     chatBody.innerHTML = ""
-//     getChatHistory(receiver).then(res => console.log("chat restored"));
-// }, 500)
+fetchFriends().then(() => console.log(friends))

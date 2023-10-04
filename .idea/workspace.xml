@@ -10,20 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/GetChatMsgServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/MessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/authentication.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/authentication.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/login.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/signup.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/GetServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/GetFriendsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/PostServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/PostMsgServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/API.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/commit.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/GetChatMsgServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetChatMsgServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/GetFriendsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetFriendsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/Message.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/PostMsgServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
     </list>
@@ -74,6 +78,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;git-widget-placeholder&quot;: &quot;oaish&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -92,6 +98,10 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp\pages\js" />
+      <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp\pages\css" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.talkwave" />
     </key>
@@ -102,7 +112,7 @@
       <module name="TalkWave" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.talkwave.*" />
+          <option name="PATTERN" value="com.talkwave.handler.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -219,6 +229,8 @@
       <workItem from="1696320382568" duration="14674000" />
       <workItem from="1696344511642" duration="11001000" />
       <workItem from="1696357656487" duration="7817000" />
+      <workItem from="1696423404096" duration="13876000" />
+      <workItem from="1696442039400" duration="6726000" />
     </task>
     <servers />
   </component>

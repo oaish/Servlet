@@ -1,8 +1,10 @@
-package com.talkwave;
+package com.talkwave.api;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.talkwave.JSPServlet;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.logging.Logger;
 
 @WebServlet(name = "getChatMsgServlet", value = "/api-get-chat-msg")
@@ -43,21 +43,19 @@ public class GetChatMsgServlet extends HttpServlet {
             rs = ps.executeQuery();
 
             ObjectMapper mapper = new ObjectMapper();
-            List<Object> jsonArray = new ArrayList<>();
+            ArrayNode arrayNode = mapper.createArrayNode();
 
             while (rs.next()) {
-                Message message = new Message();
-                message.setMessageId(rs.getInt("message_id"));
-                message.setSenderId(rs.getInt("sender_id"));
-                message.setReceiverId(rs.getInt("receiver_id"));
-                message.setContent(rs.getString("content"));
-                message.setTimestamp(rs.getString("timestamp"));
-
-                String json = mapper.writeValueAsString(message);
-                jsonArray.add(json);
+                ObjectNode userNode = mapper.createObjectNode();
+                userNode.put("message_id", rs.getString(1));
+                userNode.put("sender_id", rs.getString(2));
+                userNode.put("receiver_id", rs.getString(3));
+                userNode.put("content", rs.getString(4));
+                userNode.put("timestamp", rs.getString(5));
+                arrayNode.add(userNode);
             }
 
-            jsonMsgData = mapper.writeValueAsString(jsonArray);
+            jsonMsgData = arrayNode.toString();
             logger.info(jsonMsgData);
 
             out.println(jsonMsgData);

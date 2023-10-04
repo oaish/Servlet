@@ -6,6 +6,7 @@ const apiPostMsgURL = 'http://localhost:8080/TalkWave/api-post-msg'
 const apiPostMsgTempURL = 'http://localhost:8080/TalkWave_war_exploded/api-post-msg'
 
 let websocket = null;
+let isChatActive = false;
 
 let sessionUser = {
     id: prompt("Enter userID"),
@@ -13,11 +14,6 @@ let sessionUser = {
     profileName: "Oaish Qazi"
 }
 
-let receiver = {
-    id: "1",
-    name: "oaish",
-    profileName: "Oaish Qazi",
-    status: "offline"
-}
+let receiver = null
 
 let friends = {}

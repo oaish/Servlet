@@ -1,4 +1,4 @@
-package com.talkwave;
+package com.talkwave.api;
 
 import java.io.*;
 import java.sql.*;
@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 
-@WebServlet(name = "getServlet", value = "/api-get-friends")
+@WebServlet(name = "getFriendsServlet", value = "/api-get-friends")
 public class GetFriendsServlet extends HttpServlet {
 
     Logger logger = Logger.getLogger(GetFriendsServlet.class.getName());
@@ -26,7 +26,7 @@ public class GetFriendsServlet extends HttpServlet {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/talkwave", "root", "qazi");
-            PreparedStatement ps = con.prepareStatement("SELECT user_id, username, password, profile_name, status FROM friends f JOIN users u ON u.user_id = f.y_id WHERE x_id = ?");
+            PreparedStatement ps = con.prepareStatement("SELECT user_id, username, password, profile_name, status, last_msg FROM friends f JOIN users u ON u.user_id = f.y_id WHERE x_id = ?");
             ps.setString(1, senderID);
             logger.info(ps.toString());
             ResultSet rs = ps.executeQuery();
@@ -42,6 +42,7 @@ public class GetFriendsServlet extends HttpServlet {
                 userNode.put("password", rs.getString(3));
                 userNode.put("profileName", rs.getString(4));
                 userNode.put("status", rs.getString(5));
+                userNode.put("lastMsg", rs.getString(6));
                 arrayNode.add(userNode);
             }
 
