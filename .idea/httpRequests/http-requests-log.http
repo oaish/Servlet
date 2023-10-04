@@ -1,3 +1,143 @@
+GET http://localhost:8080/TalkWave_war_exploded/api-get-friends?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T230614.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get-chat-msg?senderID=1&receiverID=2
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T225835.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get-chat-msg?senderID=1&receiverID=2
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T225318.200.txt
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get-chat-msg?senderID=1&receiverID=2
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T225247.200.txt
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T222054.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T220541.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T220151.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T215132.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/jsp?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=9C9467BB5D657B55DE58ECDF7303BD1C
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T214425.200.html
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=9C9467BB5D657B55DE58ECDF7303BD1C
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T212820.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=9C9467BB5D657B55DE58ECDF7303BD1C
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T212658.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID="1"
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=9C9467BB5D657B55DE58ECDF7303BD1C
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T212617.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID="1"
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=9C9467BB5D657B55DE58ECDF7303BD1C
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T212454.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-get?senderID="1"
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=9C9467BB5D657B55DE58ECDF7303BD1C
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-03T212221.200.json
+
+###
+
 GET http://localhost:8080/TalkWave_war_exploded/jsp
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
