@@ -10,24 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/mercenary.pem" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/Env.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetChatMsgServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetChatMsgServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetFriendsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetFriendsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/MessageHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/API.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,6 +220,7 @@
       <workItem from="1696575328903" duration="28594000" />
       <workItem from="1696616795800" duration="1311000" />
       <workItem from="1696619814762" duration="1274000" />
+      <workItem from="1696685638663" duration="44000" />
     </task>
     <servers />
   </component>
