@@ -9,14 +9,14 @@ import javax.servlet.annotation.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.talkwave.Env;
 
 @WebServlet(name = "getFriendsServlet", value = "/api-get-friends")
 public class GetFriendsServlet extends HttpServlet {
 
     Logger logger = Logger.getLogger(GetFriendsServlet.class.getName());
 
-    public void init() {
-    }
+    public void init() {}
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String senderID = request.getParameter("senderID");
@@ -25,10 +25,9 @@ public class GetFriendsServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/talkwave", "root", "qazi");
+            Connection con = DriverManager.getConnection(Env.DB_URL, Env.DB_USERNAME, Env.DB_PASSWORD);
             PreparedStatement ps = con.prepareStatement("SELECT user_id, username, password, profile_name, status, last_msg FROM friends f JOIN users u ON u.user_id = f.y_id WHERE x_id = ?");
             ps.setString(1, senderID);
-            logger.info(ps.toString());
             ResultSet rs = ps.executeQuery();
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -48,11 +47,10 @@ public class GetFriendsServlet extends HttpServlet {
 
             String json = arrayNode.toString();
 
-            logger.info(json);
-
             out.println(json);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
+            out.println("{\"error\":\""+e.getMessage()+"\"}");
         }
     }
 

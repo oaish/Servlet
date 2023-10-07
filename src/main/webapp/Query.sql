@@ -18,7 +18,7 @@ create table messages
     receiver_id  int              not null,
     content      varchar(2000)    not null,
     timestamp    varchar(45)      not null,
-    read_receipt char default 'n' not null,
+    read_receipt varchar(10) default 'unread' not null,
     constraint receiver_fk
         foreign key (receiver_id) references users (user_id),
     constraint sender_fk
@@ -34,7 +34,7 @@ create index sender_id_idx
 -- auto-generated definition
 create table friends
 (
-    friend_id int not null
+    friend_id int not null auto_increment
         primary key,
     x_id      int not null,
     y_id      int not null,
@@ -47,15 +47,38 @@ create table friends
 
 ########## DML QUERY #############
 INSERT INTO users VALUES
-    (default, 'oaish', 'qazi', 'Oaish Qazi', default),
-    (default, 'dawg', '123', 'Abdurrahman Qureshi', default),
-    (default, 'azlan', 'ahmed', 'Azlan Shaikh', default);
+            (default, 'oaish', 'qazi', 'Oaish Qazi', default),
+            (default, 'dawg', '123', 'Abdurrahman Qureshi', default),
+            (default, 'azlan', 'ahmed', 'Azlan Shaikh', default),
+            (default, 'hassan', 'lassan', 'Hassan Shaikh', default),
+            (default, 'moin', 'mutthal', 'Mohiuddin Merchant', default);
+
+INSERT INTO friends VALUES
+            (default, '1', '2', ''),
+            (default, '2', '1', ''),
+            (default, '2', '3', ''),
+            (default, '3', '2', ''),
+            (default, '1', '3', ''),
+            (default, '3', '1', ''),
+            (default, '4', '1', ''),
+            (default, '5', '1', ''),
+            (default, '4', '2', ''),
+            (default, '5', '2', ''),
+            (default, '4', '3', ''),
+            (default, '5', '3', ''),
+            (default, '4', '5', ''),
+            (default, '5', '4', '');
 
 ########## FRIENDS QUERY #########
 SELECT user_id, username, password, profile_name, status
 FROM friends f
 JOIN users u ON u.user_id = f.y_id
 WHERE x_id = '1';
+
+SELECT x_id, u.username AS 'User', y_id, ux.username AS 'Friend'
+FROM friends f
+JOIN users u ON u.user_id = f.x_id
+JOIN users ux ON ux.user_id = f.y_id;
 
 ########## LAST MSG QUERY ########
 SELECT content FROM messages

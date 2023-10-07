@@ -7,16 +7,26 @@ function sendMsg() {
     const time = getCurrentTime()
     textBox.value = ""
     if (value === "" || !isChatActive) return
-    putSenderMsg(value, time)
+    let receipt = ""
+
+    if (receiver.canRead)
+        receipt = "read";
+    else
+        receipt = "unread";
+
+    putSenderMsg(value, time, receipt)
 
     const msgData = {
         senderID: sessionUser.id,
         receiverID: receiver.id,
         message: value,
-        timestamp: time
+        timestamp: time,
+        readReceipt: receipt,
     }
     receiver.ref.userLastMsg.title = value
     receiver.ref.userLastMsg.textContent = "You: " + value
+
+    receiver.unreadMessages = document.querySelectorAll('.read-receipt.unread')
 
     websocket && websocket.send(JSON.stringify(msgData));
 }
@@ -29,13 +39,13 @@ function getCurrentTime() {
 
 textBox.onkeyup = e => { if (e.keyCode === 13) sendMsg() }
 
-function putSenderMsg(msg, time) {
+function putSenderMsg(msg, time, readReceipt) {
     chatBody.innerHTML +=
         `<div class="row right">
             <div class="right-msg msg">
                 <div class="content">${msg}</div>
                     <div class="msg-info">
-                        <div class="read-receipt unread">
+                        <div class="read-receipt ${readReceipt}">
                             <img src="pages/img/icon/double_tick.svg" alt="">
                         </div>
                     <div class="msg-time">${time}</div>
@@ -59,19 +69,18 @@ function putReceiverMsg(msg, time) {
 }
 
 async function getChatHistory() {
-    const url = apiGetChatMsgTempURL + "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
+    const url = apiGetChatMsgURL + "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
     const res = await fetch(url, {method: 'GET'})
-    const arr = await res.json()
-
-    const parsedArray = await Promise.all(arr.map(async (jsonString) => {
-        const msg = JSON.parse(jsonString);
-        if (msg.senderId.toString() === sessionUser.id) {
-            putSenderMsg(msg.content, msg.timestamp);
+    messages = await res.json()
+    messages.map((msg) => {
+        if (msg.senderID.toString() === sessionUser.id) {
+            putSenderMsg(msg.content, msg.timestamp, msg.readReceipt);
         } else {
             putReceiverMsg(msg.content, msg.timestamp);
         }
         return msg;
-    }));
+    });
+    receiver.unreadMessages = document.querySelectorAll(".read-receipt.unread");
 }
 
 function startChat(user) {
@@ -81,6 +90,12 @@ function startChat(user) {
     receiver = user
     if (!isChatActive)
         chatMask.style.display = "none";
+    isChatActive = true;
+    const friend = friends.find(f => f.canRead)
+    console.log("START CHAT FRIEND:", friend, friends[0].canRead)
+    if (friend)
+        websocket.send(`$chat-inactive:${friend.id}&${sessionUser.id}`)
+    websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
     getChatHistory().then()
 }
 
@@ -90,7 +105,6 @@ function generateUserCard(userData) {
     userCard.onclick = () => {
         friends.forEach(friend => friend.ref.userCard.className = "user-card")
         userCard.className += " user-card-active"
-        console.log("USER DATA",userData)
         startChat(userData);
     };
 
@@ -117,12 +131,17 @@ function generateUserCard(userData) {
 }
 
 async function fetchFriends() {
-    const res = await fetch(apiGetFriendsTempURL + "?senderID=" + sessionUser.id, {method: "GET"})
+    const res = await fetch(apiGetFriendsURL + "?senderID=" + sessionUser.id, {method: "GET"})
     friends = await res.json()
+
+    if (friends.error !== undefined) {
+        console.log(friends.error);
+        return;
+    }
 
     friends.forEach((friend) => {
         friend.ref = generateUserCard(friend);
     });
 }
 
-fetchFriends().then(() => console.log(friends))
+fetchFriends().then(() => console.log("Friends Fetched Successfully"))

@@ -1,6 +1,5 @@
 package com.talkwave;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.talkwave.handler.MessageHandler;
@@ -26,7 +25,6 @@ public class WebSocketServlet {
 
     @OnOpen
     public void onOpen(Session session) {
-        logger.info(session.getId());
     }
 
     @OnMessage
@@ -40,9 +38,32 @@ public class WebSocketServlet {
 
         if (message.contains("$offline:")) {
             String id = message.substring(9);
-            logger.info("###>>>>> Offline Call <<<<<###");
             handleStatus(id, "offline");
-            logger.info("###>>>>> Offline Call <<<<<###");
+            return;
+        }
+
+        if (message.contains("$chat-active:")) {
+            String[] chatID = message.substring(13).split("&");
+            StatusHandler statusHandler = new StatusHandler();
+            /* 0: Sender; 1: Receiver */
+            statusHandler.setMsgStatus(chatID[0], chatID[1]);
+            Session msgSenderSession = sessions.get(chatID[0]);
+            try {
+                msgSenderSession.getAsyncRemote().sendText(message);
+            } catch (NullPointerException e) {session.getAsyncRemote().sendText("NullPointerException: " + e.getMessage());}
+            return;
+        }
+
+        if (message.contains("$chat-inactive:")) {
+            String[] chatID = message.substring(15).split("&");
+            /* 0: ChatUser; 1: ChatViewer */
+            Session chatUserSession = sessions.get(chatID[0]);
+            try {
+                chatUserSession.getAsyncRemote().sendText(message);
+            } catch (NullPointerException e) {
+                logger.info("NullPointerException: " + e.getMessage());
+                session.getAsyncRemote().sendText("NullPointerException: " + e.getMessage());
+            }
             return;
         }
 
@@ -60,17 +81,24 @@ public class WebSocketServlet {
 
         try {
             recipientSession.getAsyncRemote().sendText(message);
-            logger.info("### Websocket onMessage Try ###");
         } catch (NullPointerException e) {
             session.getAsyncRemote().sendText("NullPointerException");
         }
 
-        logger.info("### Websocket onMessage End ###");
     }
 
     @OnClose
     public void onClose(Session session) {
+        String closedSessionId = null;
+        for (Map.Entry<String, Session> entry : sessions.entrySet()) {
+            if (entry.getValue().equals(session)) {
+                closedSessionId = entry.getKey();
+                break;
+            }
+        }
 
+        if (closedSessionId != null)
+            sessions.remove(closedSessionId);
     }
 
     public void handleStatus(String id, String status) throws SQLException, ClassNotFoundException, IOException {
@@ -83,6 +111,7 @@ public class WebSocketServlet {
                 s.getBasicRemote().sendText("$" + status + ":" + id);
             }
         }
+        statusHandler.close();
     }
 
 }
