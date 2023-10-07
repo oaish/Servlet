@@ -3,6 +3,7 @@ package com.talkwave.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.talkwave.Env;
 import com.talkwave.JSPServlet;
 
 import javax.servlet.ServletException;
@@ -30,15 +31,13 @@ public class GetChatMsgServlet extends HttpServlet {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/talkwave", "root", "qazi");
+            con = DriverManager.getConnection(Env.DB_URL, Env.DB_USERNAME, Env.DB_PASSWORD);
             ps = con.prepareStatement("SELECT * FROM messages WHERE (sender_id = ? AND receiver_id = ?) OR (sender_id = ? AND receiver_id = ?) ORDER BY message_id");
 
             ps.setInt(1, Integer.parseInt(senderID));
             ps.setInt(2, Integer.parseInt(receiverID));
             ps.setInt(3, Integer.parseInt(receiverID));
             ps.setInt(4, Integer.parseInt(senderID));
-
-            logger.info(ps.toString());
 
             rs = ps.executeQuery();
 
@@ -47,16 +46,16 @@ public class GetChatMsgServlet extends HttpServlet {
 
             while (rs.next()) {
                 ObjectNode userNode = mapper.createObjectNode();
-                userNode.put("message_id", rs.getString(1));
-                userNode.put("sender_id", rs.getString(2));
-                userNode.put("receiver_id", rs.getString(3));
+                userNode.put("id", rs.getString(1));
+                userNode.put("senderID", rs.getString(2));
+                userNode.put("receiverID", rs.getString(3));
                 userNode.put("content", rs.getString(4));
                 userNode.put("timestamp", rs.getString(5));
+                userNode.put("readReceipt", rs.getString(6));
                 arrayNode.add(userNode);
             }
 
             jsonMsgData = arrayNode.toString();
-            logger.info(jsonMsgData);
 
             out.println(jsonMsgData);
         } catch (ClassNotFoundException | SQLException e) {

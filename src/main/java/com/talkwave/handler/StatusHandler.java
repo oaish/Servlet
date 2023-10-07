@@ -1,7 +1,7 @@
 package com.talkwave.handler;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.talkwave.Env;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +14,21 @@ public class StatusHandler {
     Logger logger = Logger.getLogger(MessageHandler.class.getName());
     public StatusHandler() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
-        con = DriverManager.getConnection("jdbc:mysql://localhost:3306/talkwave", "root", "qazi");
+        con = DriverManager.getConnection(Env.DB_URL, Env.DB_USERNAME, Env.DB_PASSWORD);
     }
     public void setUserStatus(String id, String status) throws SQLException  {
         ps = con.prepareStatement("UPDATE users SET status=? WHERE user_id = ?");
 
-        ObjectMapper mapper = new ObjectMapper();
         ps.setString(1, status);
         ps.setString(2, id);
+        ps.execute();
+    }
+
+    public void setMsgStatus(String senderID, String receiverID) throws SQLException  {
+        ps = con.prepareStatement("UPDATE messages SET read_receipt = 'read' WHERE sender_id = ? AND receiver_id = ? AND read_receipt = 'unread'");
+
+        ps.setString(1, senderID);
+        ps.setString(2, receiverID);
         ps.execute();
     }
 

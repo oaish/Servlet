@@ -10,26 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/MessageHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/authentication.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/authentication.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/login.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/signup.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/GetChatMsgServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetChatMsgServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/GetFriendsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetFriendsServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/Message.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/PostMsgServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/users-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,6 +67,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -230,7 +214,13 @@
       <workItem from="1696344511642" duration="11001000" />
       <workItem from="1696357656487" duration="7817000" />
       <workItem from="1696423404096" duration="13876000" />
-      <workItem from="1696442039400" duration="6726000" />
+      <workItem from="1696442039400" duration="6954000" />
+      <workItem from="1696510996375" duration="1763000" />
+      <workItem from="1696517496063" duration="15688000" />
+      <workItem from="1696575328903" duration="28594000" />
+      <workItem from="1696616795800" duration="1311000" />
+      <workItem from="1696619814762" duration="1274000" />
+      <workItem from="1696685638663" duration="44000" />
     </task>
     <servers />
   </component>

@@ -6,117 +6,183 @@
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
       <Grants>|root||Admin||ALTER|G
+|root||oaish||ALTER|G
 |root||root|localhost|ALTER|G
 |root||Admin||ALTER ROUTINE|G
+|root||oaish||ALTER ROUTINE|G
 |root||root|localhost|ALTER ROUTINE|G
+|root||oaish||APPLICATION_PASSWORD_ADMIN|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
 |root||mysql.infoschema|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.session|localhost|AUDIT_ABORT_EXEMPT|G
 |root||mysql.sys|localhost|AUDIT_ABORT_EXEMPT|G
+|root||oaish||AUDIT_ABORT_EXEMPT|G
 |root||root|localhost|AUDIT_ABORT_EXEMPT|G
+|root||oaish||AUDIT_ADMIN|G
 |root||root|localhost|AUDIT_ADMIN|G
 |root||mysql.session|localhost|AUTHENTICATION_POLICY_ADMIN|G
+|root||oaish||AUTHENTICATION_POLICY_ADMIN|G
 |root||root|localhost|AUTHENTICATION_POLICY_ADMIN|G
 |root||mysql.session|localhost|BACKUP_ADMIN|G
+|root||oaish||BACKUP_ADMIN|G
 |root||root|localhost|BACKUP_ADMIN|G
+|root||oaish||BINLOG_ADMIN|G
 |root||root|localhost|BINLOG_ADMIN|G
+|root||oaish||BINLOG_ENCRYPTION_ADMIN|G
 |root||root|localhost|BINLOG_ENCRYPTION_ADMIN|G
 |root||mysql.session|localhost|CLONE_ADMIN|G
+|root||oaish||CLONE_ADMIN|G
 |root||root|localhost|CLONE_ADMIN|G
 |root||mysql.session|localhost|CONNECTION_ADMIN|G
+|root||oaish||CONNECTION_ADMIN|G
 |root||root|localhost|CONNECTION_ADMIN|G
 |root||Admin||CREATE|G
+|root||oaish||CREATE|G
 |root||root|localhost|CREATE|G
+|root||oaish||CREATE ROLE|G
 |root||root|localhost|CREATE ROLE|G
 |root||Admin||CREATE ROUTINE|G
+|root||oaish||CREATE ROUTINE|G
 |root||root|localhost|CREATE ROUTINE|G
 |root||Admin||CREATE TABLESPACE|G
+|root||oaish||CREATE TABLESPACE|G
 |root||root|localhost|CREATE TABLESPACE|G
 |root||Admin||CREATE TEMPORARY TABLES|G
+|root||oaish||CREATE TEMPORARY TABLES|G
 |root||root|localhost|CREATE TEMPORARY TABLES|G
 |root||Admin||CREATE USER|G
+|root||oaish||CREATE USER|G
 |root||root|localhost|CREATE USER|G
 |root||Admin||CREATE VIEW|G
+|root||oaish||CREATE VIEW|G
 |root||root|localhost|CREATE VIEW|G
 |root||Admin||DELETE|G
+|root||oaish||DELETE|G
 |root||root|localhost|DELETE|G
 |root||Admin||DROP|G
+|root||oaish||DROP|G
 |root||root|localhost|DROP|G
+|root||oaish||DROP ROLE|G
 |root||root|localhost|DROP ROLE|G
+|root||oaish||ENCRYPTION_KEY_ADMIN|G
 |root||root|localhost|ENCRYPTION_KEY_ADMIN|G
 |root||Admin||EVENT|G
+|root||oaish||EVENT|G
 |root||root|localhost|EVENT|G
 |root||Admin||EXECUTE|G
+|root||oaish||EXECUTE|G
 |root||root|localhost|EXECUTE|G
 |root||Admin||FILE|G
+|root||oaish||FILE|G
 |root||root|localhost|FILE|G
 |root||mysql.infoschema|localhost|FIREWALL_EXEMPT|G
 |root||mysql.session|localhost|FIREWALL_EXEMPT|G
 |root||mysql.sys|localhost|FIREWALL_EXEMPT|G
+|root||oaish||FIREWALL_EXEMPT|G
 |root||root|localhost|FIREWALL_EXEMPT|G
+|root||oaish||FLUSH_OPTIMIZER_COSTS|G
 |root||root|localhost|FLUSH_OPTIMIZER_COSTS|G
+|root||oaish||FLUSH_STATUS|G
 |root||root|localhost|FLUSH_STATUS|G
+|root||oaish||FLUSH_TABLES|G
 |root||root|localhost|FLUSH_TABLES|G
+|root||oaish||FLUSH_USER_RESOURCES|G
 |root||root|localhost|FLUSH_USER_RESOURCES|G
+|root||oaish||GROUP_REPLICATION_ADMIN|G
 |root||root|localhost|GROUP_REPLICATION_ADMIN|G
+|root||oaish||GROUP_REPLICATION_STREAM|G
 |root||root|localhost|GROUP_REPLICATION_STREAM|G
 |root||Admin||INDEX|G
+|root||oaish||INDEX|G
 |root||root|localhost|INDEX|G
+|root||oaish||INNODB_REDO_LOG_ARCHIVE|G
 |root||root|localhost|INNODB_REDO_LOG_ARCHIVE|G
+|root||oaish||INNODB_REDO_LOG_ENABLE|G
 |root||root|localhost|INNODB_REDO_LOG_ENABLE|G
 |root||Admin||INSERT|G
+|root||oaish||INSERT|G
 |root||root|localhost|INSERT|G
 |root||Admin||LOCK TABLES|G
+|root||oaish||LOCK TABLES|G
 |root||root|localhost|LOCK TABLES|G
+|root||oaish||PASSWORDLESS_USER_ADMIN|G
 |root||root|localhost|PASSWORDLESS_USER_ADMIN|G
 |root||mysql.session|localhost|PERSIST_RO_VARIABLES_ADMIN|G
+|root||oaish||PERSIST_RO_VARIABLES_ADMIN|G
 |root||root|localhost|PERSIST_RO_VARIABLES_ADMIN|G
 |root||Admin||PROCESS|G
+|root||oaish||PROCESS|G
 |root||root|localhost|PROCESS|G
 |root||Admin||REFERENCES|G
+|root||oaish||REFERENCES|G
 |root||root|localhost|REFERENCES|G
 |root||Admin||RELOAD|G
+|root||oaish||RELOAD|G
 |root||root|localhost|RELOAD|G
 |root||Admin||REPLICATION CLIENT|G
+|root||oaish||REPLICATION CLIENT|G
 |root||root|localhost|REPLICATION CLIENT|G
 |root||Admin||REPLICATION SLAVE|G
+|root||oaish||REPLICATION SLAVE|G
 |root||root|localhost|REPLICATION SLAVE|G
+|root||oaish||REPLICATION_APPLIER|G
 |root||root|localhost|REPLICATION_APPLIER|G
+|root||oaish||REPLICATION_SLAVE_ADMIN|G
 |root||root|localhost|REPLICATION_SLAVE_ADMIN|G
+|root||oaish||RESOURCE_GROUP_ADMIN|G
 |root||root|localhost|RESOURCE_GROUP_ADMIN|G
+|root||oaish||RESOURCE_GROUP_USER|G
 |root||root|localhost|RESOURCE_GROUP_USER|G
+|root||oaish||ROLE_ADMIN|G
 |root||root|localhost|ROLE_ADMIN|G
 |root||Admin||SELECT|G
 |root||mysql.infoschema|localhost|SELECT|G
+|root||oaish||SELECT|G
 |root||root|localhost|SELECT|G
+|root||oaish||SENSITIVE_VARIABLES_OBSERVER|G
 |root||root|localhost|SENSITIVE_VARIABLES_OBSERVER|G
+|root||oaish||SERVICE_CONNECTION_ADMIN|G
 |root||root|localhost|SERVICE_CONNECTION_ADMIN|G
 |root||mysql.session|localhost|SESSION_VARIABLES_ADMIN|G
+|root||oaish||SESSION_VARIABLES_ADMIN|G
 |root||root|localhost|SESSION_VARIABLES_ADMIN|G
+|root||oaish||SET_USER_ID|G
 |root||root|localhost|SET_USER_ID|G
 |root||Admin||SHOW DATABASES|G
+|root||oaish||SHOW DATABASES|G
 |root||root|localhost|SHOW DATABASES|G
 |root||Admin||SHOW VIEW|G
+|root||oaish||SHOW VIEW|G
 |root||root|localhost|SHOW VIEW|G
+|root||oaish||SHOW_ROUTINE|G
 |root||root|localhost|SHOW_ROUTINE|G
 |root||Admin||SHUTDOWN|G
 |root||mysql.session|localhost|SHUTDOWN|G
+|root||oaish||SHUTDOWN|G
 |root||root|localhost|SHUTDOWN|G
 |root||Admin||SUPER|G
 |root||mysql.session|localhost|SUPER|G
+|root||oaish||SUPER|G
 |root||root|localhost|SUPER|G
 |root||mysql.infoschema|localhost|SYSTEM_USER|G
 |root||mysql.session|localhost|SYSTEM_USER|G
 |root||mysql.sys|localhost|SYSTEM_USER|G
+|root||oaish||SYSTEM_USER|G
 |root||root|localhost|SYSTEM_USER|G
 |root||mysql.session|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||oaish||SYSTEM_VARIABLES_ADMIN|G
 |root||root|localhost|SYSTEM_VARIABLES_ADMIN|G
+|root||oaish||TABLE_ENCRYPTION_ADMIN|G
 |root||root|localhost|TABLE_ENCRYPTION_ADMIN|G
+|root||oaish||TELEMETRY_LOG_ADMIN|G
 |root||root|localhost|TELEMETRY_LOG_ADMIN|G
 |root||Admin||TRIGGER|G
+|root||oaish||TRIGGER|G
 |root||root|localhost|TRIGGER|G
 |root||Admin||UPDATE|G
+|root||oaish||UPDATE|G
 |root||root|localhost|UPDATE|G
+|root||oaish||XA_RECOVER_ADMIN|G
 |root||root|localhost|XA_RECOVER_ADMIN|G
 |root||Admin||grant option|G
 |root||root|localhost|grant option|G
@@ -1067,158 +1133,161 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="300" parent="294" name="friends">
+    <user id="300" parent="1" name="oaish">
+      <Plugin>caching_sha2_password</Plugin>
+    </user>
+    <table id="301" parent="294" name="friends">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="301" parent="294" name="messages">
+    <table id="302" parent="294" name="messages">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="294" name="users">
+    <table id="303" parent="294" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="303" parent="300" name="friend_id">
+    <column id="304" parent="301" name="friend_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="304" parent="300" name="x_id">
+    <column id="305" parent="301" name="x_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="305" parent="300" name="y_id">
+    <column id="306" parent="301" name="y_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="306" parent="300" name="last_msg">
+    <column id="307" parent="301" name="last_msg">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="307" parent="300" name="friends_x__fk">
+    <foreign-key id="308" parent="301" name="friends_x__fk">
       <ColNames>x_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="308" parent="300" name="friends_y__fk">
+    <foreign-key id="309" parent="301" name="friends_y__fk">
       <ColNames>y_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="309" parent="300" name="PRIMARY">
+    <index id="310" parent="301" name="PRIMARY">
       <ColNames>friend_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="310" parent="300" name="friends_x__fk">
+    <index id="311" parent="301" name="friends_x__fk">
       <ColNames>x_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="311" parent="300" name="friends_y__fk">
+    <index id="312" parent="301" name="friends_y__fk">
       <ColNames>y_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="312" parent="300" name="PRIMARY">
+    <key id="313" parent="301" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="313" parent="301" name="message_id">
-      <AutoIncrement>47</AutoIncrement>
+    <column id="314" parent="302" name="message_id">
+      <AutoIncrement>98</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="314" parent="301" name="sender_id">
+    <column id="315" parent="302" name="sender_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="315" parent="301" name="receiver_id">
+    <column id="316" parent="302" name="receiver_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="316" parent="301" name="content">
+    <column id="317" parent="302" name="content">
       <DasType>varchar(2000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="317" parent="301" name="timestamp">
+    <column id="318" parent="302" name="timestamp">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="318" parent="301" name="read_receipt">
-      <DasType>char(1)|0s</DasType>
-      <DefaultExpression>&apos;n&apos;</DefaultExpression>
+    <column id="319" parent="302" name="read_receipt">
+      <DasType>varchar(10)|0s</DasType>
+      <DefaultExpression>&apos;unread&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="319" parent="301" name="sender_fk">
+    <foreign-key id="320" parent="302" name="sender_fk">
       <ColNames>sender_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="320" parent="301" name="receiver_fk">
+    <foreign-key id="321" parent="302" name="receiver_fk">
       <ColNames>receiver_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="321" parent="301" name="PRIMARY">
+    <index id="322" parent="302" name="PRIMARY">
       <ColNames>message_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="322" parent="301" name="sender_id_idx">
+    <index id="323" parent="302" name="sender_id_idx">
       <ColNames>sender_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="323" parent="301" name="receiver_id_idx">
+    <index id="324" parent="302" name="receiver_id_idx">
       <ColNames>receiver_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="324" parent="301" name="PRIMARY">
+    <key id="325" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="325" parent="302" name="user_id">
+    <column id="326" parent="303" name="user_id">
       <AutoIncrement>4</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="326" parent="302" name="username">
+    <column id="327" parent="303" name="username">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="327" parent="302" name="password">
+    <column id="328" parent="303" name="password">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="328" parent="302" name="profile_name">
+    <column id="329" parent="303" name="profile_name">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="329" parent="302" name="status">
+    <column id="330" parent="303" name="status">
       <DasType>varchar(10)|0s</DasType>
       <DefaultExpression>&apos;offline&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="330" parent="302" name="PRIMARY">
+    <index id="331" parent="303" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="331" parent="302" name="PRIMARY">
+    <key id="332" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
