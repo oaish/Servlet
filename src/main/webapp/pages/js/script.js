@@ -2,6 +2,8 @@ const textBox = document.querySelector("#text-box")
 const chatBody = document.querySelector(".chat-body")
 const chatMask = document.querySelector(".chat-mask")
 
+document.querySelector(".profile-icon").src = sessionUser.image;
+
 function sendMsg() {
     const value = textBox.value
     const time = getCurrentTime()
@@ -33,7 +35,7 @@ function sendMsg() {
 
 function getCurrentTime() {
     const now = new Date();
-    const options = {hour: '2-digit', minute: '2-digit', hour12: true};
+    const options = { hour: '2-digit', minute: '2-digit', hour12: true };
     return now.toLocaleTimeString('en-US', options);
 }
 
@@ -70,7 +72,7 @@ function putReceiverMsg(msg, time) {
 
 async function getChatHistory() {
     const url = apiGetChatMsgURL + "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
-    const res = await fetch(url, {method: 'GET'})
+    const res = await fetch(url, { method: 'GET' })
     messages = await res.json()
     messages.map((msg) => {
         if (msg.senderID.toString() === sessionUser.id) {
@@ -84,15 +86,22 @@ async function getChatHistory() {
 }
 
 function startChat(user) {
-    const chat_name = document.querySelector(".chat-name")
-    chat_name.textContent = user.profileName;
+    const chatName = document.querySelector(".chat-name")
+    const chatInfo = document.querySelector(".chat-info")
+    chatName.textContent = user.profileName;
     chatBody.innerHTML = ""
     receiver = user
     if (!isChatActive)
         chatMask.style.display = "none";
     isChatActive = true;
+    receiver.ref = {
+        ...receiver.ref,
+        chatInfo
+    }
+    console.log(receiver.ref)
+    receiver.ref.chatInfo.innerHTML = receiver.status
+    receiver.ref.userLastMsg.style.color = "var(--secondary-text-color)";
     const friend = friends.find(f => f.canRead)
-    console.log("START CHAT FRIEND:", friend, friends[0].canRead)
     if (friend)
         websocket.send(`$chat-inactive:${friend.id}&${sessionUser.id}`)
     websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
@@ -110,7 +119,7 @@ function generateUserCard(userData) {
 
     userCard.innerHTML =
         `<div class="user-profile">
-                <img src="pages/img/AK.png" alt="">
+                <img src="pages/img/Default.png" alt="">
                 <div class="status ${userData.status}"></div>
             </div>
             <div class="user-name">${userData.profileName}</div>
@@ -131,7 +140,7 @@ function generateUserCard(userData) {
 }
 
 async function fetchFriends() {
-    const res = await fetch(apiGetFriendsURL + "?senderID=" + sessionUser.id, {method: "GET"})
+    const res = await fetch(apiGetFriendsURL + "?senderID=" + sessionUser.id, { method: "GET" })
     friends = await res.json()
 
     if (friends.error !== undefined) {
@@ -145,3 +154,38 @@ async function fetchFriends() {
 }
 
 fetchFriends().then(() => console.log("Friends Fetched Successfully"))
+
+/* GENERAL PURPOSE FUNCTIONS */
+const downBtn = document.querySelector(".chat-down-btn")
+
+downBtn.onclick = function () {
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+chatBody.onscroll = function () {
+    const max = chatBody.scrollHeight
+    const current = chatBody.scrollTop + chatBody.clientHeight;
+
+    if (current <= max - 100)
+        downBtn.className = "chat-down-btn"
+    else
+        downBtn.className = "chat-down-btn down-btn-hidden"
+}
+
+function handleTabClick(tabName) {
+    const pill = document.querySelector(".pill");
+    const userTab = document.querySelector(".user-icon");
+    const chatTab = document.querySelector(".chat-icon");
+    const animName = tabName === "user-icon" ? "pill-down" : "pill-up"
+    pill.style.animation = animName + " 0.3s ease forwards"
+
+    if (tabName === "user-icon") {
+        userTab.classList.add("icon-active");
+        chatTab.classList.remove("icon-active");
+    } else {
+        userTab.classList.remove("icon-active");
+        chatTab.classList.add("icon-active");
+    }
+}
+
+handleTabClick("chat-user")

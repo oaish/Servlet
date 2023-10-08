@@ -1,0 +1,72 @@
+package com.talkwave.api;
+
+import com.fasterxml.jackson.core.TreeCodec;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.talkwave.Env;
+import com.talkwave.JSPServlet;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+import java.util.logging.Logger;
+
+@WebServlet(name = "validateUsernameServlet", value = "/api-validate-username")
+public class ValidateUsernameServlet extends HttpServlet {
+    Connection con = null;
+    PreparedStatement ps;
+    ResultSet rs;
+    String jsonMsgData;
+    Logger logger = Logger.getLogger(JSPServlet.class.getName());
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.setContentType("application/json");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        PrintWriter out = resp.getWriter();
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(Env.DB_URL, Env.DB_USERNAME, Env.DB_PASSWORD);
+            if (password == null) {
+                ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
+                ps.setString(1, username);
+            } else {
+                ps = con.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
+                ps.setString(1, username);
+                ps.setString(2, password);
+            }
+
+            rs = ps.executeQuery();
+
+            int rowCount = 0;
+
+            while (rs.next()) {
+                rowCount++;
+                ObjectNode userNode = objectMapper.createObjectNode();
+                userNode.put("id", rs.getString(1));
+                userNode.put("username", rs.getString(2));
+                userNode.put("profileName", rs.getString(4));
+                userNode.put("image", rs.getString(6));
+                userNode.put("isValid", "true");
+                jsonMsgData = userNode.toString();
+                logger.info(jsonMsgData);
+            }
+
+            if (rowCount < 1) {
+                jsonMsgData = "{\"isValid\":\"false\"}";
+            }
+
+            out.println(jsonMsgData);
+        } catch (ClassNotFoundException | SQLException e) {
+            logger.info("Error: " + e.getMessage());
+        }
+
+    }
+}

@@ -1,3 +1,69 @@
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=oaish&password=qazi2
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-08T223549.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=oaish&password=qazi2
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-08T223543.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=oaish&password=qazi
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-08T223537.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=oaish
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-08T223522.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2023-10-08T223458.200.json
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
+GET http://localhost:8080/TalkWave_war_exploded/api-validate-username?username=1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)
+Cookie: JSESSIONID=88377BC74E093441B5B26C6960656E0A
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+###
+
 GET http://16.170.66.215:8080/TalkWave/api-get-friends?senderID=1
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.6)

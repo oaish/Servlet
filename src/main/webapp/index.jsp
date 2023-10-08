@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +7,7 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
+    <title>TalkWave</title>
     <link rel="stylesheet" href="pages/css/main.css" />
     <link rel="stylesheet" href="pages/css/sidebar.css" />
     <link rel="stylesheet" href="pages/css/users-container.css" />
@@ -16,6 +15,16 @@
     <script src="pages/js/config.js"></script>
     <script src="pages/js/script.js" defer></script>
     <script src="pages/js/websocket.js" defer></script>
+    <script>
+      let u = JSON.parse(localStorage.getItem("json"))
+
+      sessionUser = {
+        id: u.id,
+        username: u.username,
+        profileName: u.profileName,
+        image: u.image,
+      }
+    </script>
   </head>
 
   <body>
@@ -25,15 +34,14 @@
           <div
             class="chat-icon icon"
             style="background-image: url('pages/img/icon/chat_room.svg')"
-          >
-            <div class="pill"></div>
-          </div>
+            onclick="handleTabClick('chat-icon')"
+          ></div>
           <div
             class="user-icon icon"
             style="background-image: url('pages/img/icon/user.svg')"
-          >
-            <div class="pill"></div>
-          </div>
+            onclick="handleTabClick('user-icon')"
+          ></div>
+          <div class="pill"></div>
         </div>
         <div class="sb-bottom">
           <div
@@ -42,8 +50,9 @@
           ></div>
           <div
             class="profile-icon icon"
-            style="background-image: url('pages/img/icon/cv.svg')"
-          ></div>
+          >
+            <img src="pages/img/Default.png" alt="">
+          </div>
         </div>
       </div>
 
@@ -72,15 +81,19 @@
         </div>
         <div class="chat-header">
           <div class="chat-profile">
-            <img src="pages/img/AK.png" alt="" />
+            <img src="pages/img/Default.png" alt="" />
             <div class="profile-info">
               <div class="chat-name"></div>
-              <div class="chat-info">select for more info</div>
+              <div class="chat-info"></div>
             </div>
           </div>
         </div>
 
         <div class="chat-body"></div>
+
+        <div class="chat-down-btn down-btn-hidden">
+          <img src="pages/img/icon/down.svg" alt="" />
+        </div>
 
         <div class="chat-input">
           <div

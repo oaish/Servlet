@@ -10,7 +10,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/RegisterUserServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/ValidateUsernameServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/UserHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/black-felt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/add.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/back_btn.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/client.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/close.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/edit.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/eye.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/invisible.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/plus.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/profile.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/API.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/authentication.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/Default.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/user.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/user.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/login.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/signup.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +118,8 @@
       <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp\pages\css" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.talkwave.handler" />
+      <recent name="com.talkwave.api" />
       <recent name="com.talkwave" />
     </key>
   </component>
@@ -108,7 +141,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.801" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.801" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/TalkWave_war_exploded/jsp" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/TalkWave_war_exploded/pages/auth.jsp" />
       <deployment>
         <artifact name="TalkWave:war exploded">
           <settings>
@@ -220,7 +253,10 @@
       <workItem from="1696575328903" duration="28594000" />
       <workItem from="1696616795800" duration="1311000" />
       <workItem from="1696619814762" duration="1274000" />
-      <workItem from="1696685638663" duration="44000" />
+      <workItem from="1696685638663" duration="8246000" />
+      <workItem from="1696749375719" duration="1065000" />
+      <workItem from="1696751574328" duration="7435000" />
+      <workItem from="1696783797669" duration="9136000" />
     </task>
     <servers />
   </component>

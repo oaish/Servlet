@@ -135,6 +135,7 @@
   width: 10px;
   height: 10px;
   scale: 1.15;
+  transition: 200ms ease;
   margin-top: -5px;
 }
 
@@ -166,4 +167,39 @@
 .chat-mask img {
   opacity: 0.3;
   width: 25%;
+}
+
+.chat-down-btn {
+  position: absolute;
+  bottom: 85px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  pointer-events: all;
+  box-shadow: 0 0 0.4rem;
+  justify-content: center;
+  transition: all 300ms ease;
+  background-color: var(--icon-hover-color);
+}
+
+.chat-down-btn:hover {
+  background-color: var(--user-card-hover);
+}
+
+.chat-down-btn:active {
+  scale: 0.95;
+}
+
+.chat-down-btn img {
+  width: 60%;
+  height: 60%;
+  opacity: 0.7;
+}
+
+.down-btn-hidden {
+  opacity: 0;
+  pointer-events: none;
 }
