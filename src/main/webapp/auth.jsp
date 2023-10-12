@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="css/main.css" rel="stylesheet">
-    <link href="css/authentication.css" rel="stylesheet">
+    <link href="pages/css/main.css" rel="stylesheet">
+    <link href="pages/css/authentication.css" rel="stylesheet">
     <title>TalkWave | Auth</title>
-    <script src="js/config.js"></script>
-    <script src="js/authentication.js" defer></script>
+    <script src="pages/js/config.js"></script>
+    <script src="pages/js/authentication.js" defer></script>
 </head>
 <body>
 
 <div class="container">
     <div class="card back-xl">
         <div class="theme-card">
-            <img alt="client" src="img/icon/client.svg">
+            <img alt="client" src="pages/img/icon/client.svg">
         </div>
         <div class="card-xl-2">
             <button class="btn login-btn login-btn-xl" type="button">Login</button>
@@ -24,7 +24,7 @@
     <div class="card back">
         <div class="auth-text">
             <h2>Login</h2>
-            <img alt="" class="back-btn" id="backBtn" src="img/icon/back_btn.svg">
+            <img alt="" class="back-btn" id="backBtn" src="pages/img/icon/back_btn.svg">
         </div>
         <div class="login">
             <form action="/login" class="authentication" method="post">
@@ -38,7 +38,7 @@
                                spellcheck="false"
                                type="password">
                     </label>
-                    <img alt="eye" class="eye" src="img/icon/eye.svg" style="display: none">
+                    <img alt="eye" class="eye" src="pages/img/icon/eye.svg" style="display: none">
                 </div>
                 <button class="btn login-btn auth-btn" type="button">Login</button>
             </form>
@@ -56,21 +56,21 @@
                             <input autocomplete="off" id="signup-password" placeholder="Enter Password" spellcheck="false"
                                    type="password">
                         </label>
-                        <img alt="eye" class="eye" src="img/icon/eye.svg" style="display: none">
+                        <img alt="eye" class="eye" src="pages/img/icon/eye.svg" style="display: none">
                     </div>
                     <div class="eye-cont">
                         <label class="pass">
                             <input autocomplete="off" id="signup-confirm" placeholder="Confirm Password" spellcheck="false"
                                    type="password">
                         </label>
-                        <img alt="eye" class="eye" src="img/icon/eye.svg" style="display: none">
+                        <img alt="eye" class="eye" src="pages/img/icon/eye.svg" style="display: none">
                     </div>
                 </div>
                 <div class="second-page">
                     <div class="select-image">
-                        <img alt="" src="img/icon/profile.svg">
+                        <img alt="" src="pages/img/icon/profile.svg">
                         <div class="add-image">
-                            <img src="img/icon/plus.svg" alt="">
+                            <img src="pages/img/icon/plus.svg" alt="">
                             <label>
                                 <input id="file" accept=".jpg, .jpeg, .png, .gif" type="file">
                             </label>
@@ -92,7 +92,7 @@
 
 <dialog class="error-container">
     <div class="error-msg">Error: Username or Password is Incorrect</div>
-    <img src="img/icon/close.svg" alt="" class="close-btn">
+    <img src="pages/img/icon/close.svg" alt="" class="close-btn">
 </dialog>
 
 </body>

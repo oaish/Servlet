@@ -1,8 +1,9 @@
 const textBox = document.querySelector("#text-box")
 const chatBody = document.querySelector(".chat-body")
 const chatMask = document.querySelector(".chat-mask")
+const profileBtn = document.querySelector(".profile-icon img")
 
-document.querySelector(".profile-icon").src = sessionUser.image;
+profileBtn.src = sessionUser.image;
 
 function sendMsg() {
     const value = textBox.value

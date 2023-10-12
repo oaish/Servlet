@@ -23,13 +23,14 @@ public class ValidateUsernameServlet extends HttpServlet {
     PreparedStatement ps;
     ResultSet rs;
     String jsonMsgData;
-    Logger logger = Logger.getLogger(JSPServlet.class.getName());
+    Logger logger = Logger.getLogger(ValidateUsernameServlet.class.getName());
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         String username = req.getParameter("username");
         String password = req.getParameter("password");
         PrintWriter out = resp.getWriter();
         ObjectMapper objectMapper = new ObjectMapper();
+        int rowCount = 0;
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -37,26 +38,28 @@ public class ValidateUsernameServlet extends HttpServlet {
             if (password == null) {
                 ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
                 ps.setString(1, username);
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    rowCount++;
+                }
+                jsonMsgData = "{\"isValid\":\"true\"}";
             } else {
                 ps = con.prepareStatement("SELECT * FROM users WHERE username = ? AND password = ?");
                 ps.setString(1, username);
                 ps.setString(2, password);
-            }
 
-            rs = ps.executeQuery();
+                rs = ps.executeQuery();
 
-            int rowCount = 0;
-
-            while (rs.next()) {
-                rowCount++;
-                ObjectNode userNode = objectMapper.createObjectNode();
-                userNode.put("id", rs.getString(1));
-                userNode.put("username", rs.getString(2));
-                userNode.put("profileName", rs.getString(4));
-                userNode.put("image", rs.getString(6));
-                userNode.put("isValid", "true");
-                jsonMsgData = userNode.toString();
-                logger.info(jsonMsgData);
+                while (rs.next()) {
+                    rowCount++;
+                    ObjectNode userNode = objectMapper.createObjectNode();
+                    userNode.put("id", rs.getString(1));
+                    userNode.put("username", rs.getString(2));
+                    userNode.put("profileName", rs.getString(4));
+                    userNode.put("image", rs.getString(6));
+                    userNode.put("isValid", "true");
+                    jsonMsgData = userNode.toString();
+                }
             }
 
             if (rowCount < 1) {
