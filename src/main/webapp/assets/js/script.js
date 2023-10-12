@@ -1,6 +1,4 @@
-const textBox = document.querySelector("#text-box")
-const chatBody = document.querySelector(".chat-body")
-const chatMask = document.querySelector(".chat-mask")
+profileBtn.src = sessionUser.image;
 
 function sendMsg() {
     const value = textBox.value
@@ -27,18 +25,17 @@ function sendMsg() {
     receiver.ref.userLastMsg.textContent = "You: " + value
 
     receiver.unreadMessages = document.querySelectorAll('.read-receipt.unread')
-
+    console.log(msgData)
     websocket && websocket.send(JSON.stringify(msgData));
 }
 
 function getCurrentTime() {
     const now = new Date();
-    const options = {hour: '2-digit', minute: '2-digit', hour12: true};
+    const options = { hour: '2-digit', minute: '2-digit', hour12: true };
     return now.toLocaleTimeString('en-US', options);
 }
 
 textBox.onkeyup = e => { if (e.keyCode === 13) sendMsg() }
-
 function putSenderMsg(msg, time, readReceipt) {
     chatBody.innerHTML +=
         `<div class="row right">
@@ -46,7 +43,7 @@ function putSenderMsg(msg, time, readReceipt) {
                 <div class="content">${msg}</div>
                     <div class="msg-info">
                         <div class="read-receipt ${readReceipt}">
-                            <img src="pages/img/icon/double_tick.svg" alt="">
+                            <img src="assets/img/icon/double_tick.svg" alt="">
                         </div>
                     <div class="msg-time">${time}</div>
                 </div>
@@ -54,7 +51,6 @@ function putSenderMsg(msg, time, readReceipt) {
         </div>`
     chatBody.scrollTop = chatBody.scrollHeight
 }
-
 function putReceiverMsg(msg, time) {
     chatBody.innerHTML +=
         `<div class="row left">
@@ -67,10 +63,9 @@ function putReceiverMsg(msg, time) {
         </div>`
     chatBody.scrollTop = chatBody.scrollHeight
 }
-
 async function getChatHistory() {
     const url = apiGetChatMsgURL + "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
-    const res = await fetch(url, {method: 'GET'})
+    const res = await fetch(url, { method: 'GET' })
     messages = await res.json()
     messages.map((msg) => {
         if (msg.senderID.toString() === sessionUser.id) {
@@ -82,23 +77,29 @@ async function getChatHistory() {
     });
     receiver.unreadMessages = document.querySelectorAll(".read-receipt.unread");
 }
-
 function startChat(user) {
-    const chat_name = document.querySelector(".chat-name")
-    chat_name.textContent = user.profileName;
+    const chatProfilePic = document.querySelector(".chat-profile img")
+    const chatName = document.querySelector(".chat-name")
+    const chatInfo = document.querySelector(".chat-info")
+    chatProfilePic.src = user.image === '' ? "assets/img/Default.png" : user.image
+    chatName.textContent = user.profileName;
     chatBody.innerHTML = ""
     receiver = user
     if (!isChatActive)
         chatMask.style.display = "none";
     isChatActive = true;
+    receiver.ref = {
+        ...receiver.ref,
+        chatInfo
+    }
+    receiver.ref.chatInfo.innerHTML = receiver.status
+    receiver.ref.userLastMsg.style.color = "var(--secondary-text-color)";
     const friend = friends.find(f => f.canRead)
-    console.log("START CHAT FRIEND:", friend, friends[0].canRead)
     if (friend)
         websocket.send(`$chat-inactive:${friend.id}&${sessionUser.id}`)
     websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
     getChatHistory().then()
 }
-
 function generateUserCard(userData) {
     const userCard = document.createElement("div");
     userCard.className = "user-card";
@@ -107,10 +108,9 @@ function generateUserCard(userData) {
         userCard.className += " user-card-active"
         startChat(userData);
     };
-
     userCard.innerHTML =
         `<div class="user-profile">
-                <img src="pages/img/AK.png" alt="">
+                <img src="${userData.image || 'assets/img/Default.png'}" alt="">
                 <div class="status ${userData.status}"></div>
             </div>
             <div class="user-name">${userData.profileName}</div>
@@ -129,19 +129,54 @@ function generateUserCard(userData) {
         userStatus
     }
 }
-
 async function fetchFriends() {
-    const res = await fetch(apiGetFriendsURL + "?senderID=" + sessionUser.id, {method: "GET"})
+    const res = await fetch(apiGetFriendsURL + "?senderID=" + sessionUser.id, { method: "GET" })
     friends = await res.json()
 
     if (friends.error !== undefined) {
         console.log(friends.error);
         return;
     }
-
+    myChats.innerHTML = "";
     friends.forEach((friend) => {
         friend.ref = generateUserCard(friend);
     });
 }
+fetchFriends().then(() => document.querySelector(".loader").style.display = "none")
 
-fetchFriends().then(() => console.log("Friends Fetched Successfully"))
+/* GENERAL PURPOSE FUNCTIONS */
+const downBtn = document.querySelector(".chat-down-btn")
+
+downBtn.onclick = function () {
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+chatBody.onscroll = function () {
+    const max = chatBody.scrollHeight
+    const current = chatBody.scrollTop + chatBody.clientHeight;
+
+    if (current <= max - 100)
+        downBtn.className = "chat-down-btn"
+    else
+        downBtn.className = "chat-down-btn down-btn-hidden"
+}
+
+function handleTabClick(tabName) {
+    const pill = document.querySelector(".pill");
+    const userTab = document.querySelector(".user-icon");
+    const chatTab = document.querySelector(".chat-icon");
+    const animName = tabName === "user-icon" ? "pill-down" : "pill-up"
+    pill.style.animation = animName + " 0.3s ease forwards"
+
+    if (tabName === "user-icon") {
+        userTab.classList.add("icon-active");
+        chatTab.classList.remove("icon-active");
+        openSuggested()
+    } else if (tabName === "chat-icon") {
+        userTab.classList.remove("icon-active");
+        chatTab.classList.add("icon-active");
+        openChats();
+    }
+}
+
+handleTabClick("chat-user")

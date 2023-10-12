@@ -1111,183 +1111,192 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Current>1</Current>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </schema>
-    <user id="295" parent="1" name="Admin">
+    <schema id="295" parent="1" name="gamedb">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <user id="296" parent="1" name="Admin">
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="296" parent="1" name="mysql.infoschema">
+    <user id="297" parent="1" name="mysql.infoschema">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="297" parent="1" name="mysql.session">
+    <user id="298" parent="1" name="mysql.session">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="298" parent="1" name="mysql.sys">
+    <user id="299" parent="1" name="mysql.sys">
       <CanLogin>0</CanLogin>
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="299" parent="1" name="root">
+    <user id="300" parent="1" name="root">
       <Host>localhost</Host>
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <user id="300" parent="1" name="oaish">
+    <user id="301" parent="1" name="oaish">
       <Plugin>caching_sha2_password</Plugin>
     </user>
-    <table id="301" parent="294" name="friends">
+    <table id="302" parent="294" name="friends">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="302" parent="294" name="messages">
+    <table id="303" parent="294" name="messages">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <table id="303" parent="294" name="users">
+    <table id="304" parent="294" name="users">
       <Engine>InnoDB</Engine>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
-    <column id="304" parent="301" name="friend_id">
+    <column id="305" parent="302" name="friend_id">
+      <AutoIncrement>20</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="305" parent="301" name="x_id">
+    <column id="306" parent="302" name="x_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="306" parent="301" name="y_id">
+    <column id="307" parent="302" name="y_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="307" parent="301" name="last_msg">
+    <column id="308" parent="302" name="last_msg">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <foreign-key id="308" parent="301" name="friends_x__fk">
+    <foreign-key id="309" parent="302" name="friends_x__fk">
       <ColNames>x_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="309" parent="301" name="friends_y__fk">
+    <foreign-key id="310" parent="302" name="friends_y__fk">
       <ColNames>y_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="310" parent="301" name="PRIMARY">
+    <index id="311" parent="302" name="PRIMARY">
       <ColNames>friend_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="311" parent="301" name="friends_x__fk">
+    <index id="312" parent="302" name="friends_x__fk">
       <ColNames>x_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="312" parent="301" name="friends_y__fk">
+    <index id="313" parent="302" name="friends_y__fk">
       <ColNames>y_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="313" parent="301" name="PRIMARY">
+    <key id="314" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="314" parent="302" name="message_id">
-      <AutoIncrement>98</AutoIncrement>
+    <column id="315" parent="303" name="message_id">
+      <AutoIncrement>1</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="315" parent="302" name="sender_id">
+    <column id="316" parent="303" name="sender_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="316" parent="302" name="receiver_id">
+    <column id="317" parent="303" name="receiver_id">
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="317" parent="302" name="content">
+    <column id="318" parent="303" name="content">
       <DasType>varchar(2000)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="318" parent="302" name="timestamp">
+    <column id="319" parent="303" name="timestamp">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <column id="319" parent="302" name="read_receipt">
+    <column id="320" parent="303" name="read_receipt">
       <DasType>varchar(10)|0s</DasType>
       <DefaultExpression>&apos;unread&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>6</Position>
     </column>
-    <foreign-key id="320" parent="302" name="sender_fk">
+    <foreign-key id="321" parent="303" name="sender_fk">
       <ColNames>sender_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <foreign-key id="321" parent="302" name="receiver_fk">
+    <foreign-key id="322" parent="303" name="receiver_fk">
       <ColNames>receiver_id</ColNames>
       <RefColNames>user_id</RefColNames>
       <RefTableName>users</RefTableName>
     </foreign-key>
-    <index id="322" parent="302" name="PRIMARY">
+    <index id="323" parent="303" name="PRIMARY">
       <ColNames>message_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <index id="323" parent="302" name="sender_id_idx">
+    <index id="324" parent="303" name="sender_id_idx">
       <ColNames>sender_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="324" parent="302" name="receiver_id_idx">
+    <index id="325" parent="303" name="receiver_id_idx">
       <ColNames>receiver_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="325" parent="302" name="PRIMARY">
+    <key id="326" parent="303" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="326" parent="303" name="user_id">
-      <AutoIncrement>4</AutoIncrement>
+    <column id="327" parent="304" name="user_id">
+      <AutoIncrement>10</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="327" parent="303" name="username">
+    <column id="328" parent="304" name="username">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="328" parent="303" name="password">
+    <column id="329" parent="304" name="password">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>3</Position>
     </column>
-    <column id="329" parent="303" name="profile_name">
+    <column id="330" parent="304" name="profile_name">
       <DasType>varchar(45)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
-    <column id="330" parent="303" name="status">
+    <column id="331" parent="304" name="status">
       <DasType>varchar(10)|0s</DasType>
       <DefaultExpression>&apos;offline&apos;</DefaultExpression>
       <NotNull>1</NotNull>
       <Position>5</Position>
     </column>
-    <index id="331" parent="303" name="PRIMARY">
+    <column id="332" parent="304" name="image">
+      <DasType>mediumtext|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>6</Position>
+    </column>
+    <index id="333" parent="304" name="PRIMARY">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="332" parent="303" name="PRIMARY">
+    <key id="334" parent="304" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>

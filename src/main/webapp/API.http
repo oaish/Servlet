@@ -1,3 +1,4 @@
-GET http://16.170.66.215:8080/TalkWave/api-get-friends?senderID=1
+GET http://localhost:8080/TalkWave_war_exploded/api-get-suggested?senderID=13
+
 
 

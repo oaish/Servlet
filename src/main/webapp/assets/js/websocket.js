@@ -8,15 +8,20 @@ websocket.onopen = function (event) {
 websocket.onmessage = function (event) {
     const data = event.data.toString()
     console.log("DATA", data)
-    if (data === "NullPointerException") return
+    if (data.includes("RecipientNullException")) {
+        console.log("Error: " + data)
+        return;
+    }
 
     if (data.includes("$online:")) {
         const id = data.slice(8)
         const friend = friends.find(friend => friend.id === id)
         friend.ref.userStatus.className = "status online"
         friend.status = "online"
-        if (receiver && receiver.id === friend.id)
+        if (receiver && receiver.id === friend.id) {
             receiver.status = "online"
+            receiver.ref.chatInfo.innerHTML = "online"
+        }
         console.log("$online:", id);
         return;
     } else if (data.includes("$offline:")) {
@@ -28,6 +33,7 @@ websocket.onmessage = function (event) {
 
         if (receiver && receiver.id === friend.id) {
             receiver.status = "offline"
+            receiver.ref.chatInfo.innerHTML = "offline"
             receiver.canRead = false
         }
         console.log("$offline:", id);
@@ -41,13 +47,6 @@ websocket.onmessage = function (event) {
         friend.canRead = true;
 
         receiver && receiver.unreadMessages.forEach(msg => msg.className = "read-receipt read")
-
-        // if (receiver && (!receiver.canRead && receiver.id === friend.id)) {
-        //     receiver.canRead = true;
-        //     sessionUser.chatActiveWith = receiver.id
-        //     websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
-        //     console.log("SESSION USER:", sessionUser.chatActiveWith, "RECEIVER:", receiver)
-        // }
         return;
     }
 
@@ -72,6 +71,7 @@ websocket.onmessage = function (event) {
             const friend = friends.find(friend => friend.id === msg.senderID)
             friend.ref.userLastMsg.title = msg.message
             friend.ref.userLastMsg.textContent = msg.message
+            friend.ref.userLastMsg.style.color = "var(--primary-color)"
         }
     } catch (e) {
         console.log(e)
