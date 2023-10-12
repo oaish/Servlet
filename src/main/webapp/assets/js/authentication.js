@@ -2,7 +2,7 @@ const eye = document.querySelector(".eye");
 const user = document.querySelector("#usr");
 const pass = document.querySelector("#pass");
 const loginBtn = document.querySelector(".auth-btn");
-const nextBtn = document.querySelector("#next-btn");
+const signupBtn = document.querySelector("#next-btn");
 const backCard = document.querySelector(".back");
 const loginCard = document.querySelector(".login");
 const signupCard = document.querySelector(".signup");
@@ -34,7 +34,7 @@ loginAuth.addEventListener("click", () => {
 
 signupAuth.addEventListener("click", () => {
     authText.innerHTML = "SignUp";
-    nextBtn.textContent = "Next";
+    signupBtn.textContent = "Next";
 
     loginCard.className = "login"
     signupCard.className = "signup active"
@@ -59,7 +59,7 @@ loginBtn.onclick = async function () {
         errorContainer.style.opacity = "0";
     }
 
-    let res = await fetch(apiValidateUsername + "?username=" + username + "&password=" + password, {method: 'GET'})
+    let res = await fetch(apiAuthenticationURL + "?username=" + username + "&password=" + password, {method: 'GET'})
     let data = await res.json()
 
     if (data.isValid === "false") {
@@ -77,11 +77,15 @@ loginBtn.onclick = async function () {
 
     console.log(data, userData)
     localStorage.setItem("json", JSON.stringify(userData))
-    localStorage.setItem("login", "true")
-    window.location.href = "../index.jsp"
+    localStorage.setItem("authenticated", "true")
+
+    handleAuthAnimation()
+    setTimeout(() => {
+        window.location.href = "index.jsp";
+    }, 500)
 }
 
-nextBtn.onclick = async function () {
+signupBtn.onclick = async function () {
     const username = document.querySelector("#signup-username").value.trim()
     const password = document.querySelector("#signup-password").value.trim()
     const confirm = document.querySelector("#signup-confirm").value.trim()
@@ -99,7 +103,7 @@ nextBtn.onclick = async function () {
         errorContainer.style.opacity = "0";
     }
 
-    let res = await fetch(apiValidateUsername + "?username=" + username, {method: 'GET'})
+    let res = await fetch(apiAuthenticationURL + "?username=" + username, {method: 'GET'})
     let data = await res.json()
 
     if (data.isValid === "true") {
@@ -108,20 +112,21 @@ nextBtn.onclick = async function () {
         return
     }
 
-    if (nextBtn.textContent === "Next") {
-        nextBtn.textContent = "SignUp"
+    if (signupBtn.textContent === "Next") {
+        signupBtn.textContent = "SignUp"
         firstPage.className = "first-page"
         secondPage.className = "second-page active"
         return
     }
-    
+
     if (!profile) {
         errorContainer.style.opacity = "1";
         errorMsg.textContent = 'Error: Profile name cannot be empty';
+        return
     }
 
     if (!profileB64) {
-        profileB64 = "img/icon/Default.png"
+        profileB64 = "assets/img/icon/Default.png"
     }
 
     const userData = {
@@ -131,7 +136,7 @@ nextBtn.onclick = async function () {
         image: profileB64,
     }
 
-    res = await fetch(apiRegisterUser, {
+    res = await fetch(apiRegisterUserURL, {
         method: 'POST',
         headers: {
             "Content-Type": "application/json"
@@ -143,12 +148,21 @@ nextBtn.onclick = async function () {
 
     if (data.status === "OK") {
         localStorage.setItem("json", JSON.stringify(userData))
-        localStorage.setItem("login", "true")
-        window.location.href = "../index.jsp"
-    }
-    else {
+        localStorage.setItem("authenticated", "true")
+        handleAuthAnimation()
+        setTimeout(() => {
+            window.location.href = "index.jsp"
+        }, 500)
+    } else {
         console.log(data.status)
     }
+}
+
+function handleAuthAnimation(type) {
+    const cards = document.querySelectorAll(".card")
+    cards.forEach(card => {
+        card.classList.add("anim")
+    })
 }
 
 function addBackListener() {
@@ -164,10 +178,10 @@ function handleBackClick() {
 eye.onclick = function () {
     if (pass.type === "text") {
         pass.type = "password";
-        eye.setAttribute("src", "img/icon//eye.svg")
+        eye.setAttribute("src", "assets/img/icon/eye.svg")
     } else {
         pass.type = "text";
-        eye.setAttribute("src", "img/icon//invisible.svg")
+        eye.setAttribute("src", "assets/img/icon/invisible.svg")
     }
 }
 
@@ -183,7 +197,7 @@ function clearInput() {
     user.value = ""
     pass.value = ""
     pass.type = "password";
-    eye.setAttribute("src", "img/icon/eye.svg")
+    eye.setAttribute("src", "assets/img/icon/eye.svg")
     eye.style.display = "none";
 }
 

@@ -33,6 +33,8 @@ public class WebSocketServlet {
             String id = message.substring(4);
             sessions.put(id, session);
             handleStatus(id, "online");
+            StatusHandler sh = new StatusHandler();
+            List<String> lis = sh.getFriendsOnlineList(id);
             return;
         }
 
@@ -50,7 +52,9 @@ public class WebSocketServlet {
             Session msgSenderSession = sessions.get(chatID[0]);
             try {
                 msgSenderSession.getAsyncRemote().sendText(message);
-            } catch (NullPointerException e) {session.getAsyncRemote().sendText("NullPointerException: " + e.getMessage());}
+            } catch (NullPointerException e) {
+                session.getAsyncRemote().sendText("NullPointerException: " + e.getMessage());
+            }
             return;
         }
 
@@ -75,14 +79,15 @@ public class WebSocketServlet {
         ObjectMapper mapper = new ObjectMapper();
 
         JsonNode msg = mapper.readTree(message);
-        String receiverID = msg.get("receiverID").toString().substring(1, 2);
+        String receiverID = msg.get("receiverID").toString().replace("\"", "");
 
         Session recipientSession = sessions.get(receiverID);
 
         try {
             recipientSession.getAsyncRemote().sendText(message);
         } catch (NullPointerException e) {
-            session.getAsyncRemote().sendText("NullPointerException");
+            e.printStackTrace();
+            session.getAsyncRemote().sendText("RecipientNullException: " + e);
         }
 
     }
@@ -104,7 +109,7 @@ public class WebSocketServlet {
     public void handleStatus(String id, String status) throws SQLException, ClassNotFoundException, IOException {
         StatusHandler statusHandler = new StatusHandler();
         statusHandler.setUserStatus(id, status);
-        List<String> list = statusHandler.getFriendList(id);
+        List<String> list = statusHandler.getFriendsList(id);
         for (String item : list) {
             Session s = sessions.get(item);
             if (s != null) {

@@ -1,0 +1,41 @@
+.suggestions {
+    pointer-events: all;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 107px);
+    overflow-y: scroll;
+}
+
+.user-card:hover {
+    cursor: pointer;
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    grid-row: span 2;
+}
+
+.req-button{
+    margin-left: auto;
+    margin-right: 0;
+    height: 30px;
+    width: 30px;
+}
+
+.req-button:hover {
+    cursor: pointer;
+}
+
+.remove-card{
+    display: none;
+}
+
+.profile-username,.profile-id{
+    color: #9f9f9f;
+}
+
+.hidden{
+    height: 0 !important;
+}

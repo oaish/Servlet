@@ -17,8 +17,10 @@ public class JSPServlet extends HttpServlet {
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String auth = (String) req.getAttribute("authenticated");
         if (auth == null || auth.equals("")) {
-            RequestDispatcher dispatcher = req.getRequestDispatcher("pages/auth.jsp");
+            RequestDispatcher dispatcher = req.getRequestDispatcher("auth.jsp");
+//            RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");
             dispatcher.forward(req, resp);
+            return;
         }
         else if (auth.equals("login")) {
             String username = (String) req.getAttribute("username");

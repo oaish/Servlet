@@ -8,7 +8,10 @@ websocket.onopen = function (event) {
 websocket.onmessage = function (event) {
     const data = event.data.toString()
     console.log("DATA", data)
-    if (data === "NullPointerException") return
+    if (data.includes("RecipientNullException")) {
+        console.log("Error: " + data)
+        return;
+    }
 
     if (data.includes("$online:")) {
         const id = data.slice(8)

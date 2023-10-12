@@ -10,38 +10,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/RegisterUserServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/ValidateUsernameServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/UserHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/auth.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/black-felt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/add.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/back_btn.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/client.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/close.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/edit.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/eye.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/invisible.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/plus.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/profile.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/AddFriendServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetSuggestedServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/qarq90.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/icon/add_user.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/initializer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/qarq90.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/api/AuthenticationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/AuthenticationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetFriendsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/api/GetFriendsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/UserHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/UserHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/API.http" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/API.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/authentication.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/loader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/loader.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/sidebar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/users-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/users-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/img/icon/user.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/img/icon/user.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/authentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/authentication.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/chat-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/css/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/css/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/img/AK.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/Default.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/user.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/img/icon/user.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pages/js/websocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/signup.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +51,7 @@
         <option value="JavaScript File" />
         <option value="HTTP Request" />
         <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -83,37 +81,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;database.data.extractors.current.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;oaish&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "database.data.extractors.current.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "oaish",
+    "last_opened_file_path": "C:/Users/Oaish Qazi/Documents/Code/TalkWave/src/main/java/com/talkwave/api",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect&quot;: [
-      &quot;MySQL&quot;
+    "com.intellij.ide.scratch.LRUPopupBuilder$1/SQL Dialect": [
+      "MySQL"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\java\com\talkwave\api" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp\assets\js" />
+      <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp" />
       <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp\pages\js" />
       <recent name="C:\Users\Oaish Qazi\Documents\Code\TalkWave\src\main\webapp\pages\css" />
     </key>
@@ -141,7 +146,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.801" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.801" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/TalkWave_war_exploded/pages/auth.jsp" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/TalkWave_war_exploded/jsp" />
       <deployment>
         <artifact name="TalkWave:war exploded">
           <settings>
@@ -257,6 +262,10 @@
       <workItem from="1696749375719" duration="1065000" />
       <workItem from="1696751574328" duration="7435000" />
       <workItem from="1696783797669" duration="9136000" />
+      <workItem from="1696868896567" duration="4313000" />
+      <workItem from="1696933813515" duration="8848000" />
+      <workItem from="1696962781659" duration="2579000" />
+      <workItem from="1697113856637" duration="10945000" />
     </task>
     <servers />
   </component>

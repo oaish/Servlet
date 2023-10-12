@@ -12,8 +12,6 @@ public class UserHandler {
     Connection con;
     PreparedStatement ps;
     ResultSet rs;
-    Logger logger = Logger.getLogger(UserHandler.class.getName());
-
     public UserHandler() throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         con = DriverManager.getConnection(Env.DB_URL, Env.DB_USERNAME, Env.DB_PASSWORD);

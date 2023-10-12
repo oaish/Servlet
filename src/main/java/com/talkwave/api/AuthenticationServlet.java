@@ -1,11 +1,8 @@
 package com.talkwave.api;
 
-import com.fasterxml.jackson.core.TreeCodec;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.talkwave.Env;
-import com.talkwave.JSPServlet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,13 +14,13 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.util.logging.Logger;
 
-@WebServlet(name = "validateUsernameServlet", value = "/api-validate-username")
-public class ValidateUsernameServlet extends HttpServlet {
+@WebServlet(name = "authenticationServlet", value = "/api-authenticate")
+public class AuthenticationServlet extends HttpServlet {
     Connection con = null;
     PreparedStatement ps;
     ResultSet rs;
     String jsonMsgData;
-    Logger logger = Logger.getLogger(ValidateUsernameServlet.class.getName());
+    Logger logger = Logger.getLogger(AuthenticationServlet.class.getName());
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("application/json");
         String username = req.getParameter("username");

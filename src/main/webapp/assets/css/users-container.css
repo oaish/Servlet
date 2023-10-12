@@ -5,11 +5,23 @@
 }
 
 .title-bar {
-  margin-bottom: 15px;
-  padding-block: 5px;
-  padding-inline: 30px;
   display: flex;
   align-items: center;
+  padding-block: 5px;
+  margin-bottom: 15px;
+  padding-inline: 30px;
+  justify-content: space-between;
+}
+
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout img {
+  width: 25px;
+  height: 25px;
 }
 
 .title-bar h2 {
@@ -50,6 +62,7 @@
 }
 
 .users {
+  pointer-events: all;
   padding: 0 30px;
   margin-top: 22px;
   display: flex;
@@ -60,15 +73,15 @@
 
 .user-card {
   width: 100%;
-  /*margin-inline: auto;*/
   height: 70px;
   display: grid;
-  padding: 10px 15px 10px 10px;
   column-gap: 15px;
   border-radius: 8px;
   margin-bottom: 5px;
+  padding: 10px 15px 10px 10px;
   grid-template-rows: 25px 25px;
   grid-template-columns: 50px 1fr;
+  border: 1px solid var(--user-card-hover);
 }
 
 .user-card:hover {
@@ -94,6 +107,7 @@
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
+  box-shadow: 0 0 0.3rem;
 }
 
 .user-profile .status {

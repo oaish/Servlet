@@ -1,8 +1,3 @@
-const textBox = document.querySelector("#text-box")
-const chatBody = document.querySelector(".chat-body")
-const chatMask = document.querySelector(".chat-mask")
-const profileBtn = document.querySelector(".profile-icon img")
-
 profileBtn.src = sessionUser.image;
 
 function sendMsg() {
@@ -30,7 +25,7 @@ function sendMsg() {
     receiver.ref.userLastMsg.textContent = "You: " + value
 
     receiver.unreadMessages = document.querySelectorAll('.read-receipt.unread')
-
+    console.log(msgData)
     websocket && websocket.send(JSON.stringify(msgData));
 }
 
@@ -41,7 +36,6 @@ function getCurrentTime() {
 }
 
 textBox.onkeyup = e => { if (e.keyCode === 13) sendMsg() }
-
 function putSenderMsg(msg, time, readReceipt) {
     chatBody.innerHTML +=
         `<div class="row right">
@@ -49,7 +43,7 @@ function putSenderMsg(msg, time, readReceipt) {
                 <div class="content">${msg}</div>
                     <div class="msg-info">
                         <div class="read-receipt ${readReceipt}">
-                            <img src="pages/img/icon/double_tick.svg" alt="">
+                            <img src="assets/img/icon/double_tick.svg" alt="">
                         </div>
                     <div class="msg-time">${time}</div>
                 </div>
@@ -57,7 +51,6 @@ function putSenderMsg(msg, time, readReceipt) {
         </div>`
     chatBody.scrollTop = chatBody.scrollHeight
 }
-
 function putReceiverMsg(msg, time) {
     chatBody.innerHTML +=
         `<div class="row left">
@@ -70,7 +63,6 @@ function putReceiverMsg(msg, time) {
         </div>`
     chatBody.scrollTop = chatBody.scrollHeight
 }
-
 async function getChatHistory() {
     const url = apiGetChatMsgURL + "?senderID=" + sessionUser.id + "&receiverID=" + receiver.id
     const res = await fetch(url, { method: 'GET' })
@@ -85,10 +77,11 @@ async function getChatHistory() {
     });
     receiver.unreadMessages = document.querySelectorAll(".read-receipt.unread");
 }
-
 function startChat(user) {
+    const chatProfilePic = document.querySelector(".chat-profile img")
     const chatName = document.querySelector(".chat-name")
     const chatInfo = document.querySelector(".chat-info")
+    chatProfilePic.src = user.image === '' ? "assets/img/Default.png" : user.image
     chatName.textContent = user.profileName;
     chatBody.innerHTML = ""
     receiver = user
@@ -99,7 +92,6 @@ function startChat(user) {
         ...receiver.ref,
         chatInfo
     }
-    console.log(receiver.ref)
     receiver.ref.chatInfo.innerHTML = receiver.status
     receiver.ref.userLastMsg.style.color = "var(--secondary-text-color)";
     const friend = friends.find(f => f.canRead)
@@ -108,7 +100,6 @@ function startChat(user) {
     websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
     getChatHistory().then()
 }
-
 function generateUserCard(userData) {
     const userCard = document.createElement("div");
     userCard.className = "user-card";
@@ -117,10 +108,9 @@ function generateUserCard(userData) {
         userCard.className += " user-card-active"
         startChat(userData);
     };
-
     userCard.innerHTML =
         `<div class="user-profile">
-                <img src="pages/img/Default.png" alt="">
+                <img src="${userData.image || 'assets/img/Default.png'}" alt="">
                 <div class="status ${userData.status}"></div>
             </div>
             <div class="user-name">${userData.profileName}</div>
@@ -139,7 +129,6 @@ function generateUserCard(userData) {
         userStatus
     }
 }
-
 async function fetchFriends() {
     const res = await fetch(apiGetFriendsURL + "?senderID=" + sessionUser.id, { method: "GET" })
     friends = await res.json()
@@ -148,13 +137,12 @@ async function fetchFriends() {
         console.log(friends.error);
         return;
     }
-
+    myChats.innerHTML = "";
     friends.forEach((friend) => {
         friend.ref = generateUserCard(friend);
     });
 }
-
-fetchFriends().then(() => console.log("Friends Fetched Successfully"))
+fetchFriends().then(() => document.querySelector(".loader").style.display = "none")
 
 /* GENERAL PURPOSE FUNCTIONS */
 const downBtn = document.querySelector(".chat-down-btn")
@@ -183,9 +171,11 @@ function handleTabClick(tabName) {
     if (tabName === "user-icon") {
         userTab.classList.add("icon-active");
         chatTab.classList.remove("icon-active");
-    } else {
+        openSuggested()
+    } else if (tabName === "chat-icon") {
         userTab.classList.remove("icon-active");
         chatTab.classList.add("icon-active");
+        openChats();
     }
 }
 
