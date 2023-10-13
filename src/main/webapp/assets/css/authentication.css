@@ -140,9 +140,14 @@ input:-moz-placeholder {
     border-radius: 0 0.7rem 0 0.7rem;
 }
 
-.btn:focus {
+.auth-btn:focus {
+    transition: none;
     outline: 2px solid teal;
     outline-offset: 3px;
+}
+
+.auth-btn:active {
+    scale: 0.98;
 }
 
 .signup .btn {
@@ -380,4 +385,14 @@ input:focus {
     100% {
         transform: translateX(50%);
     }
+}
+
+.logout:hover {
+    transition: .3s;
+    opacity: 0.7;
+}
+
+.logout:active {
+    transition: .3s;
+    scale: 0.98;
 }

@@ -6,6 +6,13 @@
     <title>TalkWave | Auth</title>
     <script src="assets/js/config.js"></script>
     <script src="assets/js/authentication.js" defer></script>
+    <script>
+        const isLoggedIn = localStorage.getItem("auth")
+
+        if (isLoggedIn === "true") {
+            window.location.href = "index.jsp"
+        }
+    </script>
 </head>
 <body>
 
@@ -40,7 +47,7 @@
                     </label>
                     <img alt="eye" class="eye" src="assets/img/icon/eye.svg" style="display: none">
                 </div>
-                <button class="btn login-btn auth-btn" type="button">Login</button>
+                <button class="btn login-auth-btn auth-btn " type="button">Login</button>
             </form>
         </div>
 
@@ -81,7 +88,7 @@
                                type="text">
                     </label>
                 </div>
-                <button class="btn login-btn" id="next-btn" type="button">Next</button>
+                <button class="btn auth-btn" id="next-btn" type="button">Next</button>
             </form>
         </div>
     </div>

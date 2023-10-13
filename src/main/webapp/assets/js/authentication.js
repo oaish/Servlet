@@ -1,7 +1,7 @@
 const eye = document.querySelector(".eye");
 const user = document.querySelector("#usr");
 const pass = document.querySelector("#pass");
-const loginBtn = document.querySelector(".auth-btn");
+const loginBtn = document.querySelector(".login-auth-btn");
 const signupBtn = document.querySelector("#next-btn");
 const backCard = document.querySelector(".back");
 const loginCard = document.querySelector(".login");
@@ -77,12 +77,12 @@ loginBtn.onclick = async function () {
 
     console.log(data, userData)
     localStorage.setItem("json", JSON.stringify(userData))
-    localStorage.setItem("authenticated", "true")
+    localStorage.setItem("auth", "true")
 
     handleAuthAnimation()
     setTimeout(() => {
         window.location.href = "index.jsp";
-    }, 500)
+    }, 470)
 }
 
 signupBtn.onclick = async function () {
@@ -148,7 +148,7 @@ signupBtn.onclick = async function () {
 
     if (data.status === "OK") {
         localStorage.setItem("json", JSON.stringify(userData))
-        localStorage.setItem("authenticated", "true")
+        localStorage.setItem("auth", "true")
         handleAuthAnimation()
         setTimeout(() => {
             window.location.href = "index.jsp"

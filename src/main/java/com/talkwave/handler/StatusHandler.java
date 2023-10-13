@@ -43,17 +43,6 @@ public class StatusHandler {
         return list;
     }
 
-    public List<String> getFriendsOnlineList(String id) throws SQLException {
-        ps = con.prepareStatement("SELECT y_id, status FROM friends f JOIN users u on f.y_id = u.user_id WHERE x_id = ?");
-        ps.setString(1, id);
-        rs = ps.executeQuery();
-        List<String> list = new ArrayList<>();
-        while (rs.next()) {
-            list.add(rs.getString(1)+":"+rs.getString(2));
-        }
-        return list;
-    }
-
     public void close() throws SQLException {
         con.close();
     }

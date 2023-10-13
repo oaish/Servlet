@@ -16,6 +16,7 @@ const ssh = 'ssh -i "mercenary.pem" ubuntu@16.170.66.215'
 const ip = '16.170.66.215'
 
 let websocket = null
+
 let isChatActive = false
 
 let sessionUser = null
@@ -29,3 +30,5 @@ let messages = []
 let profileB64 = ""
 
 let suggestions = {}
+
+let interval = null

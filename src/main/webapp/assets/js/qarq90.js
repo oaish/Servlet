@@ -6,6 +6,20 @@ function openChats() {
     fetchFriends().then(() => console.log("friends fetched successfully again"))
 }
 
+function openProfile() {
+    myProfile.classList.toggle("slide-animate");
+    myProfile.classList.toggle("slide-hidden");
+    myProfileName.innerHTML = sessionUser.profileName;
+    myUserName.innerHTML = "@" + sessionUser.username;
+}
+
+document.onclick = function (e) {
+    if (!myProfile.contains(e.target) && !settingsBtn.contains(e.target)) {
+        myProfile.classList.remove("slide-animate");
+        myProfile.classList.add("slide-hidden");
+    }
+}
+
 function openSuggested() {
     myChats.className = "users hidden";
     mySuggested.className = "suggestions";
@@ -21,7 +35,6 @@ function generateSuggestedCard(userData) {
     suggestedCard.innerHTML =
         `<div class="user-profile">
             <img src="${userData.image}" alt="">
-<!--            <div class="status ${userData.status}"></div>-->
         </div>
         <div class="user-info">
             <div class="user-name">${userData.profileName}</div>
@@ -33,6 +46,7 @@ function generateSuggestedCard(userData) {
     addFriendBtn.onclick = () => {
         suggestedCard.parentNode.removeChild(suggestedCard);
         sendFriendRequest(userData.id).then(() => console.log("req sent"));
+        websocket.send(`$add-friend:${userData.id}&${sessionUser.id}`)
     }
 
     const usersContainer = document.querySelector(".suggestions");

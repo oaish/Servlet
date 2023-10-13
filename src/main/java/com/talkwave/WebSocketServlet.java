@@ -22,19 +22,14 @@ import java.util.logging.Logger;
 public class WebSocketServlet {
     Logger logger = Logger.getLogger(WebSocketServlet.class.getName());
     private static final Map<String, Session> sessions = new ConcurrentHashMap<>();
-
     @OnOpen
-    public void onOpen(Session session) {
-    }
-
+    public void onOpen(Session session) {}
     @OnMessage
-    public void onMessage(String message, Session session) throws IOException, ServletException, SQLException, ClassNotFoundException {
+    public void onMessage(String message, Session session) throws IOException, SQLException, ClassNotFoundException {
         if (message.contains("$id:")) {
             String id = message.substring(4);
             sessions.put(id, session);
             handleStatus(id, "online");
-            StatusHandler sh = new StatusHandler();
-            List<String> lis = sh.getFriendsOnlineList(id);
             return;
         }
 
@@ -69,6 +64,12 @@ public class WebSocketServlet {
                 session.getAsyncRemote().sendText("NullPointerException: " + e.getMessage());
             }
             return;
+        }
+
+        if (message.contains("$add-friend:")) {
+            String[] chatID = message.substring(12).split("&");
+            Session chatUserSession = sessions.get(chatID[0]);
+            chatUserSession.getAsyncRemote().sendText(message);
         }
 
         MessageHandler msgHandler = new MessageHandler();

@@ -42,10 +42,9 @@ websocket.onmessage = function (event) {
 
     if (data.includes("$chat-active:")) {
         const ID = data.slice(13).split("&")
-        console.log(data, ID)
+        console.log(data)
         const friend = friends.find(f => f.id === ID[1])
         friend.canRead = true;
-
         receiver && receiver.unreadMessages.forEach(msg => msg.className = "read-receipt read")
         return;
     }
@@ -58,6 +57,11 @@ websocket.onmessage = function (event) {
         if (receiver && receiver.id === friend.id) {
             receiver.canRead = false;
         }
+        return;
+    }
+
+    if (data.includes("add-friend:")) {
+        fetchFriends().then(()=> console.log("friends fetched successfully"))
         return;
     }
 

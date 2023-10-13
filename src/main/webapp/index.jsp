@@ -20,6 +20,12 @@
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/websocket.js" defer></script>
     <script>
+        const isLoggedIn = localStorage.getItem("auth")
+
+        if (!(isLoggedIn === "true")) {
+            window.location.href = "auth.jsp"
+        }
+
         let user = JSON.parse(localStorage.getItem("json"))
 
         sessionUser = {
@@ -62,9 +68,21 @@
             <div
                     class="settings-icon icon"
                     style="background-image: url('assets/img/icon/settings.svg')"
+                    onclick="openProfile()"
             ></div>
-            <div class="profile-icon icon">
-                <img src="assets/img/Default.png" alt="">
+        </div>
+    </div>
+
+    <div class="my-profile-card slide-hidden" id="myProfile">
+        <div class="inner-profile inner-image-container">
+            <img id="profile-img" src="" alt="pfp">
+        </div>
+        <div class="profile-info-div">
+            <div class="inner-profile">
+                <h4 id="profile-name"></h4>
+            </div>
+            <div class="inner-profile">
+                <h4 id="user-name"></h4>
             </div>
         </div>
     </div>

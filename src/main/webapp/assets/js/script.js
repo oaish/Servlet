@@ -1,4 +1,4 @@
-profileBtn.src = sessionUser.image;
+myProfileImg.src = sessionUser.image;
 
 function sendMsg() {
     const value = textBox.value
@@ -98,6 +98,11 @@ function startChat(user) {
     if (friend)
         websocket.send(`$chat-inactive:${friend.id}&${sessionUser.id}`)
     websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
+    interval = setInterval(() => {
+        if (receiver.status === "online")
+            clearInterval(interval)
+        websocket.send(`$chat-active:${receiver.id}&${sessionUser.id}`)
+    }, 1000)
     getChatHistory().then()
 }
 function generateUserCard(userData) {
@@ -149,6 +154,12 @@ const downBtn = document.querySelector(".chat-down-btn")
 
 downBtn.onclick = function () {
     chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+logoutBtn.onclick = function () {
+    websocket.send("$offline:" + sessionUser.id)
+    localStorage.setItem("auth", "false");
+    window.location.href = "auth.jsp"
 }
 
 chatBody.onscroll = function () {
