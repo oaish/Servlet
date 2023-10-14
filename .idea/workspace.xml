@@ -10,23 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54329f2f-0ce6-4462-94a6-6a1a86e26d86" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/abe4717e-3825-42e1-ba36-0681b62d8742.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/JSPServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/WebSocketServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/StatusHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/talkwave/handler/UserHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/authentication.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/authentication.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/qarq90.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/qarq90.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/authentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/authentication.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/initializer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/initializer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/qarq90.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/qarq90.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/Query.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Query.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/websocket.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/auth.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/auth.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +241,9 @@
       <workItem from="1696933813515" duration="8848000" />
       <workItem from="1696962781659" duration="2579000" />
       <workItem from="1697113856637" duration="10945000" />
-      <workItem from="1697189406107" duration="12337000" />
+      <workItem from="1697189406107" duration="13337000" />
+      <workItem from="1697217929478" duration="1319000" />
+      <workItem from="1697286377466" duration="1985000" />
     </task>
     <servers />
   </component>

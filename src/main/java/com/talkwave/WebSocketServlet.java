@@ -70,6 +70,7 @@ public class WebSocketServlet {
             String[] chatID = message.substring(12).split("&");
             Session chatUserSession = sessions.get(chatID[0]);
             chatUserSession.getAsyncRemote().sendText(message);
+            return;
         }
 
         MessageHandler msgHandler = new MessageHandler();

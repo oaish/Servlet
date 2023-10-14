@@ -96,3 +96,12 @@ ORDER BY user_id DESC
 LIMIT 7;
 
 SELECT * FROM users;
+SELECT * FROM friends;
+
+UPDATE users SET status = 'offline' WHERE 1=1;
+
+DELETE FROM friends WHERE 1=1;
+DELETE FROM messages WHERE 1=1;
+DELETE FROM users WHERE username='dawg';
+
+SELECT user_id, username, password, profile_name, image from users WHERE user_id NOT IN (SELECT y_id FROM friends WHERE x_id = ?) AND user_id <> ? ORDER BY user_id DESC LIMIT 10;

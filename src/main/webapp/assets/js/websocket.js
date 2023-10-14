@@ -1,5 +1,10 @@
 websocket = new WebSocket(`ws://${domain}/websocket`)
 
+setInterval(() => {
+    if (!websocket)
+        websocket = new WebSocket(`ws://${domain}/websocket`)
+}, 100)
+
 websocket.onopen = function (event) {
     console.log('WebSocket connection established')
     websocket.send(`$id:${sessionUser.id}`)
